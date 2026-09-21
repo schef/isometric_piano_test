@@ -2,6 +2,16 @@
 
 RP2040 firmware for experimenting with velocity-sensitive piano keys on Fluxpad V2 Hall-effect hardware. It enumerates as a composite USB CDC serial and USB-MIDI device.
 
+## Key switches and sensors
+
+- **Analog keys: Wooting Lekker Hall-effect switches.** The sibling `../fluxpad` repository names Wooting Lekker in its README, and its Fluxpad V2 RevB PCB has three Hall-key footprints labeled `DRV5056A3QDBZx Lekker`. The exact stock switch variant (L45 versus L60) and switch generation are not confirmed by those sources.
+- **Hall sensors: Texas Instruments DRV5056A3QDBZ**, as identified in the V2 schematic. These are the PCB-mounted sensors, not the physical key switches.
+- **Digital keys: Gateron Red**, according to the Fluxpad README. That README describes an older two-analog-key configuration, so this is not definitive confirmation of the digital switches fitted to every V2 unit. This firmware uses the three analog keys only.
+
+Source files in the sibling repository: `../fluxpad/README.md`, `../fluxpad/ECAD/FluxpadKicad/Fluxpad.kicad_pcb`, and `../fluxpad/ECAD/FluxpadKicad/Fluxpad.kicad_sch`.
+
+The proposed 60-key controller in [PCB_DESIGN.md](PCB_DESIGN.md) separately selects **Wooting Lekker V2 L60 Linear switches with 60 g springs**. That design choice does not establish which switch variant shipped in the Fluxpad V2; the board version and switch generation are distinct.
+
 ## MIDI mapping
 
 | Fluxpad key | MIDI note | Pitch |
