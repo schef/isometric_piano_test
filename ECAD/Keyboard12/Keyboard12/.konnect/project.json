@@ -1,0 +1,30 @@
+{
+  "design_rules": [],
+  "fab_constraints": {
+    "board_thickness_mm": 1.6,
+    "fab_house": "JLCPCB",
+    "layer_count": 4,
+    "stackup_plan": {
+      "core_dielectric_mm": 1.065,
+      "core_er": 4.6,
+      "finished_thickness_tolerance_percent": 10,
+      "inner_copper_mm": 0.0152,
+      "nominal_finished_thickness_mm": 1.6,
+      "note": "Published layer sum is 1.5862 mm; retain vendor dimensions rather than force sum to nominal. Existing KiCad physical stackup untouched: Konnect exposes no stackup writer. ENIG retained as design intent, not an order. Intended layer roles: B.Cu analog/components, In2.Cu continuous GND adjacent to B.Cu, In1.Cu power/secondary ground as reviewed later, F.Cu other routing. No planes exist or continuity is proven. Service tier, assembly, mask colour, quantity and special edge-pad process remain unconfirmed; no impedance requirement or order created.",
+      "outer_copper_mm": 0.035,
+      "prepreg_each_mm": 0.2104,
+      "prepreg_er": 4.4,
+      "prepreg_type": "7628*1",
+      "retrieved_date": "2026-09-21",
+      "routing_basis": "Existing Default width/clearance 0.2/0.2 mm exceeds published multilayer 1oz trace/space 0.09/0.09 mm and pad-track 0.1 mm. Limit this pass to local reference/trim signal connectivity; supply distribution current/transient/voltage-drop sizing incomplete.",
+      "sources": [
+        "https://jlcpcb.com/impedance",
+        "https://jlcpcb.com/capabilities/pcb-capabilities"
+      ],
+      "status": "documented_candidate_not_applied_or_ordered",
+      "vendor_stackup": "JLC04161H-7628"
+    }
+  },
+  "naming_conventions": {},
+  "sourcing": {}
+}
