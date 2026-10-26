@@ -3,7 +3,9 @@
 This document specifies the winning hardware architecture for a scalable,
 velocity-sensitive MIDI piano keyboard. It is the authoritative reference for
 any agent implementing the firmware or schematic of this board, and inherits
-all the working velocity / USB-MIDI logic from the existing `main.c` prototype.
+the velocity / USB-MIDI approach from the Fluxpad example at
+`examples/fluxpad_midi/src/main.c`. The 60-key controller is the main project;
+the three-key example is reference firmware, not an implementation of this board.
 
 ## 1. Architecture summary
 
@@ -194,8 +196,9 @@ TinyUSB CDC-serial + USB-MIDI (as in the existing `main.c`).
 
 ## 7. Firmware requirements (for the implementing agent)
 
-Reuse the existing two-threshold timing + velocity curve from `main.c`; the
-changes are all in the read path:
+Reuse the existing two-threshold timing + velocity curve from
+`examples/fluxpad_midi/src/main.c`. Replace the read path and add calibration
+and scan scheduling for the main controller:
 
 - `ANALOG_KEY_COUNT`  → 60 (5 boards × 12 keys).
 - Replace direct Pico ADC reads with **SPI reads of the ADS7953** on each board:
@@ -236,6 +239,15 @@ and extend the note map; no MCU change required.
 
 ## 9. Open items / decisions pending
 
+- **Pre-routing blocker (owner clarification):** independently inspect the
+  ADS7953 reference-voltage circuitry and sensor-input compatibility in the actual
+  schematic. A previous AI raised a concern; it is not yet a confirmed defect.
+  ADC and other component choices may change to fix errors. A replacement ADC
+  must have 12 or 16 channels and adequate throughput for the master to scan six
+  boards. The owner confirmed **60 keys for now (five populated 12-key boards)**;
+  sixth-board capacity is an expansion/throughput requirement, not an increase
+  in the current build's key count.
+  See `HANDOVER.md` for provisional 4 kHz/key throughput and averaging constraints.
 - Reconfirm ADS7953SDBT / C701092 stock and assembly eligibility in JLCPCB's
   BOM tool immediately before ordering.
 - Verify the Pico 2 footprint, underside USB-test-pad routing, and USB-C
@@ -282,7 +294,7 @@ ADC rather than relying on Global Sourcing or consigned parts.
 
 - ADS79xx datasheet (SLAS605C) — TI.
 - ADS7886 (single-channel fast ADC) and ADS7953 (16-ch) as fallback options.
-- Existing `main.c` (two-threshold velocity algorithm) — the firmware foundation.
+- `examples/fluxpad_midi/src/main.c` (two-threshold velocity algorithm) — reference firmware.
 - `../fluxpad/ECAD/FluxpadKicad` — existing KiCad project whose
   `Fluxpad.kicad_sch` uses the DRV5056A3QDBZ sensor and whose
   `SW_Cherry_MX_PCB_1.00u_hall_effect` footprint, sensor support circuitry,

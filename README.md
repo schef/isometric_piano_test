@@ -1,84 +1,85 @@
-# Isometric Piano Test
+# Isometric Piano — 60-Key Hall-Effect MIDI Controller
 
-RP2040 firmware for experimenting with velocity-sensitive piano keys on Fluxpad V2 Hall-effect hardware. It enumerates as a composite USB CDC serial and USB-MIDI device.
+The main project is the **PCB design** for a modular, velocity-sensitive USB MIDI keyboard using
+Hall-effect switches. The goal is **60 keys, built from five identical 12-key
+sensor boards and one Raspberry Pi Pico 2 master carrier**.
 
-## Key switches and sensors
+The original three-key Fluxpad V2 experiment is preserved as
+[example firmware](examples/fluxpad_midi/README.md), not the main controller.
 
-- **Analog keys: Wooting Lekker Hall-effect switches.** The sibling `../fluxpad` repository names Wooting Lekker in its README, and its Fluxpad V2 RevB PCB has three Hall-key footprints labeled `DRV5056A3QDBZx Lekker`. The exact stock switch variant (L45 versus L60) and switch generation are not confirmed by those sources.
-- **Hall sensors: Texas Instruments DRV5056A3QDBZ**, as identified in the V2 schematic. These are the PCB-mounted sensors, not the physical key switches.
-- **Digital keys: Gateron Red**, according to the Fluxpad README. That README describes an older two-analog-key configuration, so this is not definitive confirmation of the digital switches fitted to every V2 unit. This firmware uses the three analog keys only.
+## Main controller architecture
 
-Source files in the sibling repository: `../fluxpad/README.md`, `../fluxpad/ECAD/FluxpadKicad/Fluxpad.kicad_pcb`, and `../fluxpad/ECAD/FluxpadKicad/Fluxpad.kicad_sch`.
+- **Keys:** Wooting Lekker V2 L60 Linear switches with DSA-profile keycaps.
+- **Sensing:** one TI DRV5056A3QDBZ Hall sensor per key.
+- **Key boards:** 12 sensors and one ADS7953 SPI ADC per board; no local MCU.
+- **Master:** Raspberry Pi Pico 2 on a carrier with USB-C and a dedicated
+  3.3 V supply for the sensor boards.
+- **Interconnect:** shared SPI clock/data, with a separate chip-select per board.
+- **MIDI:** 60 chromatic notes, MIDI 36–95, over USB.
+- **Dynamics:** measure travel time between two sensor thresholds and convert
+  it to MIDI velocity, with per-key calibration planned.
+- **Scan target:** 4 kHz per key, independent of USB logging/transmission.
 
-The proposed 60-key controller in [PCB_DESIGN.md](PCB_DESIGN.md) separately selects **Wooting Lekker V2 L60 Linear switches with 60 g springs**. That design choice does not establish which switch variant shipped in the Fluxpad V2; the board version and switch generation are distinct.
+See [PCB_DESIGN.md](PCB_DESIGN.md) for the detailed hardware specification,
+component selections, and open design decisions. It is a design specification,
+not a claim that the hardware or SPI implementation has been validated.
 
-## MIDI mapping
+## Project status
 
-| Fluxpad key | MIDI note | Pitch |
-| --- | ---: | --- |
-| key_4 | 60 | C4 |
-| key_3 | 64 | E4 |
-| key_2 | 67 | G4 |
+**Start the hardware handover with [HANDOVER.md](HANDOVER.md).** The current KiCad
+project is `ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pro`.
 
-## Velocity algorithm
+**Current blocker:** work paused before routing due to an unverified concern
+about the ADS7953 reference-voltage circuit. Inspect and resolve it before routing;
+the ADC and other components may change if needed. The master must have scan
+capacity for **six boards** for expansion. The owner confirmed the current build
+is **60 keys: five populated 12-key boards**. See the handover for the throughput budget.
 
-Two-threshold timing, modeled after the dual-switch approach used by Fatar, Yamaha, and Roland keyboards.
+| Area | Status |
+| --- | --- |
+| 60-key architecture | Specified in `PCB_DESIGN.md` |
+| Hardware design files | Existing work in `ECAD/`; not certified fabrication-ready |
+| Pico 2 / ADS7953 controller firmware | Not implemented yet |
+| Per-key calibration and flash persistence | Planned |
+| Three-key Fluxpad example | Implemented; retained as a reference for sensing, velocity, and USB MIDI |
 
-- ADC scan rate: 4 kHz per key (one scan every 250 µs)
-- Each reading: average of 8 raw 12-bit ADC samples
-- **Timing starts** when ADC falls below 1600 (start of key travel)
-- **Timing stops** when ADC falls below 600 (near bottom). Note On is sent with the measured velocity.
-- If ADC rises back above 1600 before hitting 600, the stroke is cancelled (no false trigger)
-- Velocity is calculated as: `velocity = 1,800,000 / travel_time_us`, clamped to 1–127
-- Minimum travel time: 1.5 ms (prevents overflow, fastest realistic strike)
-- **Note Off** is sent when ADC rises above 800 (hysteresis band above the low threshold)
+## Repository layout
 
-Typical velocity values:
+```text
+ECAD/                       Main controller hardware design work
+PCB_DESIGN.md               60-key hardware and firmware specification
+examples/fluxpad_midi/      Standalone three-key RP2040 reference firmware
+  src/                     Key scanning, velocity curve, and TinyUSB support
+  CMakeLists.txt           Pico SDK example build
+  deploy.sh                Build and flash the Fluxpad example
+CMakeLists.txt              Compatibility build entry point for the example
+deploy.sh                   Compatibility deployment wrapper for the example
+```
 
-| Strike | Travel time | Velocity |
-| --- | --- | --- |
-| Hard | ~5 ms | 127 |
-| Medium | ~15 ms | 120 |
-| Soft | ~40 ms | 45 |
-| Very soft | ~80 ms | 22 |
+There is no main-controller firmware target yet. Root-level build/deploy commands
+still operate on the **Fluxpad example only**, to preserve existing workflows.
 
-## Build
+## PCB development priorities
 
-Install the [Raspberry Pi Pico SDK](https://github.com/raspberrypi/pico-sdk) and an ARM GCC toolchain. Then:
+1. Validate the 12-key board and master carrier design, including Pico 2 SPI pin
+   assignments, ADS7953 framing/sequencing, power, and connector wiring.
+2. Establish the current schematic/layout completion state through an electrical
+   and mechanical review; do not infer readiness from the design specification.
+3. Resolve sensor/switch alignment, board dimensions, mounting, and inter-board connectors.
+4. Run ERC/DRC and review component footprints, sourcing, and assembly constraints.
+5. Prepare fabrication outputs only after review and approval. Firmware bring-up
+   is a later validation step, not the current handover objective.
+
+## Run the reference example
+
+Install the official Raspberry Pi Pico SDK and ARM GCC toolchain, then:
 
 ```sh
 export PICO_SDK_PATH=$HOME/git/pico-sdk
-cmake -S . -B build
-cmake --build build
+cmake -S examples/fluxpad_midi -B build/fluxpad_midi -DPICO_BOARD=pico
+cmake --build build/fluxpad_midi
 ```
 
-The firmware image is `build/fluxpad_midi.uf2`.
-
-## Build and flash in one command
-
-`deploy.sh` rebuilds the firmware, resets the connected Fluxpad into its RP2040 bootloader, detects the boot drive by its `RPI-RP2` filesystem label, mounts it at `/mnt/usb`, copies the UF2, and unmounts it.
-
-```sh
-bash deploy.sh
-```
-
-Pass a different serial device if needed:
-
-```sh
-bash deploy.sh /dev/ttyACM1
-```
-
-## Flash and monitor
-
-1. While the stock Fluxpad firmware is installed, open and close its serial port at 1200 baud to enter the RP2040 bootloader:
-
-   ```sh
-   python3 -c 'import serial; p = serial.Serial("/dev/ttyACM0", 1200); p.close()'
-   ```
-
-2. Copy `build/fluxpad_midi.uf2` to the mounted `RPI-RP2` drive.
-3. After reboot, the device appears as a MIDI input/output and as a serial port. View velocity output with:
-
-   ```sh
-   screen /dev/ttyACM0 115200
-   ```
+This produces `build/fluxpad_midi/fluxpad_midi.uf2` for **Fluxpad V2 / RP2040**,
+not the Pico 2 master. See the [example README](examples/fluxpad_midi/README.md)
+for flashing, serial monitoring, and the current velocity algorithm.
