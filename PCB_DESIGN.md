@@ -52,10 +52,17 @@ SPI: SCLK, MOSI(SDI), MISO(SDO), CS#n          → shared bus to master
 
 ### 3.2 ADC selection (THE WINNER PART)
 
-- Selected: **ADS7953SDBT** — 12-bit, **16-channel**, 1-MSPS, single-ended,
-   SPI, 38-pin TSSOP. JLC/LCSC part **C701092**.
-  - Its external reference is **REF5025AIDR** (SOIC-8, JLC/LCSC **C11341**),
-    producing 2.5 V. Follow SLAS605C: place a 10 uF ceramic directly between
+- ADC family retained pending input-range decision: **ADS7953**, 12-bit,
+   **16-channel**, 1-MSPS, single-ended SPI, 38-pin TSSOP.
+   **Updated sourcing choice: ADS7953SDBTR / JLCPCB C701670.** TI confirms it is
+   the same device/package/pinout as ADS7953SDBT, supplied in tape-and-reel rather
+   than tubes. The current KiCad fields still say ADS7953SDBT / C701092 and have
+   not been edited. Validate the existing footprint and update fields through
+   Konnect only after the electrical choice is approved.
+   - Its **current schematic** external reference is **REF5025AIDR** (SOIC-8,
+     recorded JLC/LCSC **C11341**, exact sourcing still to verify), producing
+     2.5 V. This reference/range combination is under review, not electrically
+     approved. Follow SLAS605C: place a 10 uF ceramic directly between
     ADS7953 REFP and REFM, short MXO to AINP for the unbuffered path, and tie
     AINM to the analog-ground plane.
   - Use channels 0–11 for the 12 keys. Exclude channels 12–15 from the
@@ -67,8 +74,41 @@ SPI: SCLK, MOSI(SDI), MISO(SDO), CS#n          → shared bus to master
     key: more than 20× the required per-key scan rate.
   - Five boards require approximately 3.84 Mbit/s of 16-bit SPI transfers at
     a 4 kHz scan rate, well below the 20 MHz serial-interface limit.
-  - Observed JLC stock was 27 units; order 6 for five boards plus one spare,
-    subject to live BOM-tool verification when ordering.
+   - Owner-provided JLCPCB screenshot on 2026-11-02 shows C701670 with **13 in
+     stock at US$8.5952 each (1+ tier)**, Extended. Six for five boards plus a
+     spare would be approximately US$51.57 at that tier. Recheck stock, quantity
+     pricing and assembly eligibility before ordering; no stock is reserved.
+
+#### Reference/range alternatives — no hardware change applied
+
+See [SCHEMATIC_REVIEW.md](SCHEMATIC_REVIEW.md) for datasheet evidence and tests.
+
+| Approach | Nominal ADC input range | Wiring/circuit impact | Open condition |
+| --- | --- | --- | --- |
+| 2.0 V reference, Range 2 | 0–4.0 V | New reference plus additional nominal 5 V analog rail to every ADC; sensors/SPI remain 3.3 V; revise connector power wiring | Verify minimum analog supply ≥ 2 × actual VREF, USB/cable losses and all tolerances |
+| Near-3.0 V reference, Range 1 | About 0–3.0 V | Keep single 3.3 V interconnect rail; change reference circuit | Measure useful key-travel voltages; permit clipping only outside needed velocity/release crossings; reference must not exceed ADC's 3.0 V maximum including tolerance |
+| Existing 2.5 V reference, Range 2 | 0–5.0 V | Add analog rail and connector wiring | Raw USB 5 V does not guarantee the required minimum; tighter supply/reference margin |
+| Existing 2.5 V reference, Range 1 | 0–2.5 V | No range-related hardware change if measurements prove adequate | Actual threshold crossings and variation must fit below full scale |
+| Attenuate each Hall output with a voltage divider (buffer only if needed), existing 2.5 V reference / Range 1 | Sensor waveform scaled into 0–2.5 V | Keep ADC and single 3.3 V rail; add/rework per-key resistors and RC filter; recalibrate thresholds | Size for worst-case output/reference/tolerances; verify sensor loading, ADC settling, noise and velocity timing; values not selected |
+| Different 12-/16-channel ADC | Depends on selected circuit | ADC/footprint and support-circuit redesign | Qualify electrical fit, settling, timing and normal JLCPCB stock/cost |
+
+Approximately 3.1 V is the sensor's linear output ceiling at nominal 3.3 V,
+not a measured switch output. A 3.0 V measuring range might lose approximately
+0.1 V near that ceiling, but the actual loss may differ or be absent. For the
+two-threshold piano-velocity method, clipping can be acceptable outside the two
+timing thresholds and release region. First measure the actual selected
+switch/sensor geometry over travel, multiple units and representative operating
+conditions, including dynamic response after the RC filter. Then decide whether
+3.0 V (or even 2.5 V) covers the useful crossings with sufficient margin.
+Reference dropout/startup/noise and supply tolerances remain design checks.
+The attenuation option reduces sensor voltage before it reaches the ADC, rather
+than changing sensor power or relying on clipping. For example only, a 0.70
+divider ratio maps 3.1 V to about 2.17 V. It preserves more of the travel waveform
+than clipping, but reduces ADC counts per unit movement and changes sensor load
+and filter behavior. No divider values or buffer are selected; see the review
+for the circuit concept and required calculations/measurements.
+MAX11131 was evaluated but is not selected: the shown MAX11131AUI+T / C7457799
+listing is pre-order only, zero stock, estimated US$33.0809 each.
 
 ### 3.3 Sensor — DRV5056A3QDBZ (per key)
 
@@ -223,7 +263,7 @@ and scan scheduling for the main controller:
 | Item                           | Qty | Unit    | Subtot  |
 |--------------------------------|-----|---------|---------|
 | Raspberry Pi Pico 2 module (master) | 1 | TBD | TBD |
-| ADS7953SDBT ADC (C701092)      | 6   | $5.1201 | $30.72 |
+| ADS7953SDBTR ADC (C701670), screenshot price 2026-11-02 | 6 | $8.5952 | $51.57 |
 | DRV5056A3QDBZ Hall sensor      | 60  | TBD      | TBD     |
 | Neodymium magnets              | 60  | $0.05   | $3.00   |
 | Wooting Lekker V2 L60 Linear switch | 60 | €29.99 / 70-pack | €29.99 |
@@ -232,7 +272,7 @@ and scan scheduling for the main controller:
 | Key PCBs ×5 (JLC)              | panels | —    | $10–25  |
 | JLC SMT assembly (key boards)  | 5   | —       | $30–70  |
 | Master PCB (hand-solder)       | 1–5 | —       | $5–10   |
-| **Total complete system**      |     |         | **~$110–170** |
+| **Historical total complete system estimate (not refreshed for updated ADC/reference/power choices)** | | | **~$110–170** |
 
 Scale note: to go beyond 60 keys, add more key boards (new CS line per board)
 and extend the note map; no MCU change required.
@@ -243,13 +283,18 @@ and extend the note map; no MCU change required.
   ADS7953 reference-voltage circuitry and sensor-input compatibility in the actual
   schematic. A previous AI raised a concern; it is not yet a confirmed defect.
   ADC and other component choices may change to fix errors. A replacement ADC
-  must have 12 or 16 channels and adequate throughput for the master to scan six
-  boards. The owner confirmed **60 keys for now (five populated 12-key boards)**;
-  sixth-board capacity is an expansion/throughput requirement, not an increase
-  in the current build's key count.
+  must have 12 or 16 channels and adequate throughput for the master to scan five
+  sensor boards. The owner clarified **six boards total: five populated 12-key
+  sensor boards plus one Pico 2 master carrier**, for 60 keys. Five chip-select
+  lines suffice; the master itself needs no CS and there is no sixth-sensor-board
+  expansion requirement. The sixth ADC in the cost table is a spare, not another
+  populated board.
   See `HANDOVER.md` for provisional 4 kHz/key throughput and averaging constraints.
-- Reconfirm ADS7953SDBT / C701092 stock and assembly eligibility in JLCPCB's
-  BOM tool immediately before ordering.
+- Reconfirm **ADS7953SDBTR / C701670** stock, quantity-specific price and assembly
+  eligibility in JLCPCB's BOM tool immediately before ordering. The reference/
+  range alternative is not selected; measure real sensor travel/output before
+  deciding whether a near-3.0 V reference suffices for velocity sensing or a
+  2.0 V reference/0–4.0 V range with added analog rail is preferable.
 - Verify the Pico 2 footprint, underside USB-test-pad routing, and USB-C
   connector mechanical clearance before laying out the master carrier board.
 - Confirm DRV5056A3QDBZ / LCSC C85573 availability and current pricing before

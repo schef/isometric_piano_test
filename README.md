@@ -29,11 +29,14 @@ not a claim that the hardware or SPI implementation has been validated.
 **Start the hardware handover with [HANDOVER.md](HANDOVER.md).** The current KiCad
 project is `ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pro`.
 
-**Current blocker:** work paused before routing due to an unverified concern
-about the ADS7953 reference-voltage circuit. Inspect and resolve it before routing;
-the ADC and other components may change if needed. The master must have scan
-capacity for **six boards** for expansion. The owner confirmed the current build
-is **60 keys: five populated 12-key boards**. See the handover for the throughput budget.
+**Current blocker:** review confirmed that the current ADS7953 reference/range
+does not cover the sensor's full possible output; actual switch clipping is
+unmeasured. Measure useful travel/velocity thresholds and resolve the range
+choice before routing (see [SCHEMATIC_REVIEW.md](SCHEMATIC_REVIEW.md));
+the ADC and other components may change if needed. The system has **six boards
+total: five populated 12-key sensor boards plus one Pico 2 master carrier**.
+Only the five sensor ADCs need chip-select lines. There is no sixth-sensor-board
+expansion requirement. See the handover for the 60-key throughput budget.
 
 | Area | Status |
 | --- | --- |

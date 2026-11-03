@@ -19,11 +19,17 @@ unless explicitly requested. The example build instructions below are reference 
 ## Main project priorities
 
 Owner clarification: work paused just before routing because a previous AI
-flagged a possible ADS7953 reference-voltage issue. Inspect and resolve that
-unverified concern before routing. ADC/components may change to correct errors;
-the ADC must provide 12 or 16 channels and the master must support scanning six
-boards. The owner confirmed 60 keys for now (five populated 12-key boards);
-six-board capacity is for throughput/expansion, not a 72-key build.
+flagged a possible ADS7953 reference-voltage issue. Initial review confirmed an
+input-range limitation, not failed REF5025 supply headroom; actual switch clipping
+is unmeasured. See `SCHEMATIC_REVIEW.md` for the 2.0V/0–4.0V extra-rail and
+near-3.0V single-rail options and measurement gate for velocity thresholds.
+Resolve the range decision before routing. If retaining ADS7953, the documented
+sourcing choice is ADS7953SDBTR / C701670 (same chip/package as ADS7953SDBT,
+tape-and-reel); saved KiCad fields remain unchanged. ADC/components may change;
+the ADC must provide 12 or 16 channels and the master must support scanning five
+sensor boards. The owner clarified that six boards total means five populated
+12-key boards plus the Pico 2 master carrier: 60 keys and five chip-select lines.
+There is no sixth-sensor-board expansion requirement; the master needs no CS.
 See `HANDOVER.md` for the provisional 4 kHz/key budget,
 including the shared-bus limit on copying eight-sample averaging.
 
