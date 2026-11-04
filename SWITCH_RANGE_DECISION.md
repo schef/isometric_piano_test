@@ -70,6 +70,15 @@ that all historical units have identical magnets.
 
 ## Sources
 
+- [Official Gateron KS-20 White engineering specification (PDF)](https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf):
+  KS-20TF10B045NW-X72; page 5 includes the mechanical cross-section and drawing
+  dated 2023-09-13, version 4. It specifies 4.1 ±0.2 mm travel, north-pole
+  magnetic flux density of 102 ±15 G initially and 905 ±80 G at full travel.
+  It does not provide a complete magnet material/grade specification or a
+  field-versus-distance curve. Reconcile the specified magnetic direction and
+  sensor geometry with the observed falling voltage before extrapolating to
+  different PCB thicknesses; no quantitative thickness-to-voltage prediction
+  has been validated.
 - Fluxpad V2 specification: https://fluxpad.xyz/pages/features-and-details
 - Reference schematic/PCB: https://github.com/sssata/fluxpad/tree/fluxpad-2/ECAD/FluxpadKicad
   (inspected branch commit `8b2e752136033a81b9da01566e2e36ccafb966d6`).

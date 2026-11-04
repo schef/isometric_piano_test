@@ -7,6 +7,11 @@
 > Lekker selections, costs and pending-range statements in this specification;
 > prototype validation and other electrical/mechanical reviews remain open.
 
+Current switch reference: [Gateron KS-20 White engineering specification (PDF)](https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf),
+part KS-20TF10B045NW-X72; see page 5 for the mechanical cross-section and magnetic
+specifications. This reference does not establish an exact voltage-versus-travel
+curve for the chosen PCB/sensor assembly.
+
 This document specifies the winning hardware architecture for a scalable,
 velocity-sensitive MIDI piano keyboard. It is the authoritative reference for
 any agent implementing the firmware or schematic of this board, and inherits

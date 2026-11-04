@@ -10,6 +10,9 @@ measurement, not Keyboard12's saved **1.6 mm**. See
 footprint discrepancy and remaining validation. This supersedes the older
 Lekker selection and pending-range discussion below. No KiCad changes applied.
 
+Switch reference: [official KS-20 White engineering specification (PDF)](https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf),
+especially page 5 for the cross-section, polarity and mechanical dimensions.
+
 ## Scope
 
 The main deliverable is the hardware design for a modular **60-key Hall-effect
