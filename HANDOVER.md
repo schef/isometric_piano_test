@@ -1,5 +1,15 @@
 # PCB project handover
 
+## Current decision — 2026-11-04
+
+Owner selected **Gateron KS-20 White**, the existing **2.5 V reference /
+ADS7953 Range 1**, and copying Fluxpad V2's sensing geometry and PCB thickness.
+The upstream board specifies **1.0 mm**, confirmed by the owner's physical
+measurement, not Keyboard12's saved **1.6 mm**. See
+[SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md) for measurements, the
+footprint discrepancy and remaining validation. This supersedes the older
+Lekker selection and pending-range discussion below. No KiCad changes applied.
+
 ## Scope
 
 The main deliverable is the hardware design for a modular **60-key Hall-effect

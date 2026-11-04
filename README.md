@@ -1,5 +1,11 @@
 # Isometric Piano — 60-Key Hall-Effect MIDI Controller
 
+> **Current hardware decision (2026-11-04):** Gateron KS-20 White switches,
+> existing 2.5 V ADC reference / Range 1, and Fluxpad V2 sensing geometry and
+> PCB thickness. See [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md).
+> This supersedes older switch/range statements below; no KiCad change or
+> fabrication approval has been made.
+
 The main project is the **PCB design** for a modular, velocity-sensitive USB MIDI keyboard using
 Hall-effect switches. The goal is **60 keys, built from five identical 12-key
 sensor boards and one Raspberry Pi Pico 2 master carrier**.

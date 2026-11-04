@@ -1,5 +1,11 @@
 # Keyboard12 schematic review — 2026-11-02
 
+> **2026-11-04 update:** owner selected KS-20 White, retained 2.5 V / Range 1,
+> and chose to copy Fluxpad V2 sensing geometry and thickness. See
+> [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md). The range choice is no
+> longer pending; the full theoretical sensor-range limitation remains true,
+> while prototype coverage and other review items remain unvalidated.
+
 ## Scope and evidence
 
 Initial electrical review of the saved single-sheet design:

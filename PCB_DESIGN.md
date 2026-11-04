@@ -1,5 +1,12 @@
 # PCB Design — 60-Key Velocity-Sensitive MIDI Keyboard (Winner: SPI Bus / Design B)
 
+> **2026-11-04 owner decision:** use **Gateron KS-20 White**, retain the existing
+> **REF5025 / ADS7953 Range 1 (0–2.5 V)**, and copy Fluxpad V2 sensing geometry
+> and PCB thickness (upstream **1.0 mm**; saved Keyboard12 is **1.6 mm**).
+> See [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md). This supersedes older
+> Lekker selections, costs and pending-range statements in this specification;
+> prototype validation and other electrical/mechanical reviews remain open.
+
 This document specifies the winning hardware architecture for a scalable,
 velocity-sensitive MIDI piano keyboard. It is the authoritative reference for
 any agent implementing the firmware or schematic of this board, and inherits

@@ -18,6 +18,13 @@ unless explicitly requested. The example build instructions below are reference 
 
 ## Main project priorities
 
+**2026-11-04 owner decision supersedes the older pending-range/Lekker text:**
+use Gateron KS-20 White, retain ADS7953 / REF5025 2.5 V Range 1, and reproduce
+Fluxpad V2 switch/sensor geometry and PCB thickness. Upstream thickness is
+1.0 mm, confirmed by the owner's physical measurement; saved Keyboard12 is 1.6 mm.
+Read `SWITCH_RANGE_DECISION.md` for measurement limits, the actual PCB footprint
+discrepancy and remaining validation. No KiCad changes applied for this decision.
+
 Owner clarification: work paused just before routing because a previous AI
 flagged a possible ADS7953 reference-voltage issue. Initial review confirmed an
 input-range limitation, not failed REF5025 supply headroom; actual switch clipping
