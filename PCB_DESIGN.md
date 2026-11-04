@@ -6,6 +6,11 @@
 > See [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md). Prototype validation
 > and other electrical/mechanical reviews remain open; no KiCad changes applied.
 
+> **Later sensor finding:** Fluxpad's assembly identity is **OH49E-S / C85573**,
+> despite its DRV5056-labelled symbols. Saved Keyboard12 specifies DRV5056A3;
+> owner reconfirmation of the sensor is required before sensing changes. No
+> substitution is approved. See [FLUXPAD_SENSOR_IDENTIFICATION.md](FLUXPAD_SENSOR_IDENTIFICATION.md).
+
 Current switch reference: [Gateron KS-20 White engineering specification (PDF)](https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf),
 part KS-20TF10B045NW-X72; see page 5 for the mechanical cross-section and magnetic
 specifications. This reference does not establish an exact voltage-versus-travel
@@ -38,7 +43,7 @@ be validated, not assumed from the architecture.
 
 | Criterion                | Design A (analog MUX)       | Design B (SPI ADC/board)  |
 |--------------------------|-----------------------------|----------------------------|
-| Max keys                 | ~64 (Pico 4-ADC wall)       | many (add boards + CS)    |
+| Max keys                 | Depends on MUX and scan budget | Add boards + CS, subject to bus/power limits |
 | Full 60-key sweep        | Historical estimate: ~1.2 ms | Target: ≤250 µs on shared SPI; unvalidated |
 | Velocity timing granularity | Depends on scan schedule | Provisional 4 kHz/key target; unvalidated |
 | Scalability              | Poor                        | Good                       |
@@ -53,7 +58,7 @@ the actual scan schedule and interconnect still require validation.
 ### 3.1 Block diagram
 
 ```
-12 × DRV5056A3QDBZ linear Hall sensors
+12 × linear Hall sensors (saved: DRV5056A3; selection to reconfirm)
    │  analog outputs (VCC/3.3, GND, VOUT)
    ▼
 ADS7953 (12-bit, 16-channel, 1-MSPS, SPI ADC)   ← 1 chip per board
@@ -110,7 +115,7 @@ See [SCHEMATIC_REVIEW.md](SCHEMATIC_REVIEW.md) for datasheet evidence and tests.
 | Attenuate each Hall output with a voltage divider (buffer only if needed), existing 2.5 V reference / Range 1 | Sensor waveform scaled into 0–2.5 V | Keep ADC and single 3.3 V rail; add/rework per-key resistors and RC filter; recalibrate thresholds | Size for worst-case output/reference/tolerances; verify sensor loading, ADC settling, noise and velocity timing; values not selected |
 | Different 12-/16-channel ADC | Depends on selected circuit | ADC/footprint and support-circuit redesign | Qualify electrical fit, settling, timing and normal JLCPCB stock/cost |
 
-Approximately 3.1 V is the sensor's linear output ceiling at nominal 3.3 V,
+For the saved DRV5056 design, approximately 3.1 V is the linear output ceiling at nominal 3.3 V,
 not a measured switch output. A 3.0 V measuring range might lose approximately
 0.1 V near that ceiling, but the actual loss may differ or be absent. For the
 two-threshold piano-velocity method, clipping can be acceptable outside the two
@@ -128,29 +133,38 @@ for the circuit concept and required calculations/measurements.
 MAX11131 was evaluated but is not selected: the shown MAX11131AUI+T / C7457799
 listing is pre-order only, zero stock, estimated US$33.0809 each.
 
-### 3.3 Sensor — DRV5056A3QDBZ (per key)
+### 3.3 Sensor — saved DRV5056A3QDBZ; selection to reconfirm
 
-- Use the same TI **DRV5056A3QDBZ** linear, ratiometric, unipolar Hall-effect
-  sensor as the existing Fluxpad design. This avoids qualifying a new sensor
-  for the key mechanism.
-- Unipolar output, nominal 0.6 V quiescent voltage; typical sensitivity is
+- Saved Keyboard12 specifies TI **DRV5056A3QDBZ**. The earlier retention decision
+  assumed this was the physical Fluxpad sensor; that assumption is contradicted
+  by Fluxpad's sourcing fields and the reference-unit evidence. **Reconfirm the
+  sensor with the owner before implementation.** No substitution is approved.
+- DRV5056A3 characteristics: unipolar output, nominal 0.6 V quiescent voltage; typical sensitivity is
   **30 mV/mT at 3.3 V** (50 mV/mT at 5 V), not a bipolar ±79 mT range.
   Linear output extends to approximately VCC − 0.2 V; 20 kHz bandwidth,
   SOT-23 package. See `SCHEMATIC_REVIEW.md` for datasheet references.
-- One per key: 3 pins (VCC, GND, VOUT) → VOUT directly to an ADC channel.
+- One per key: 3 pins (VCC, GND, VOUT) → VOUT through the RC filter to an ADC channel.
 - Reuse Fluxpad's `Tang:SW_Cherry_MX_PCB_1.00u_hall_effect` footprint and its
-  sensor placement relative to the Cherry-MX-style key. The Fluxpad schematic
-  identifies the JLC/LCSC part as **C85573**; confirm current availability
-  before placing the assembly order.
+  sensor placement relative to the Cherry-MX-style key only after resolving the
+  placed-footprint discrepancy and validating the approved sensor package.
+- **C85573 is OH49E-S, not DRV5056A3.** Fluxpad's schematic and JLCPCB database
+  assign this code to the DRV5056-labelled symbols. LCSC's OH49E-S photo has
+  marking 1320; its half-supply baseline agrees with the measured 1.63 V with
+  the switch removed. Do not transfer the measured 1.48–0.87 V response to TI's
+  sensor. See `FLUXPAD_SENSOR_IDENTIFICATION.md` for sources and limits.
+- If OH49E-S is approved later, verify its sourcing, package/pin geometry,
+  current, polarity, output range, noise and ADC settling explicitly. Common
+  nominal pin roles do not make its behaviour equivalent to DRV5056A3.
 - Small neodymium magnet on each key stem; sensor fixed under the key.
 - Wiring is short and on-board; an unbuffered path is intended, but ADC
   acquisition settling and sensor/filter loading still need validation.
 
 ### 3.4 Per-key analog circuit (four parts)
 
-Copy the non-LED portion of Fluxpad's Hall-sensor circuit for every key:
+The saved Keyboard12 circuit follows the non-LED portion of Fluxpad's circuit.
+Review the sensor-dependent loading/settling after sensor reconfirmation:
 
-1. DRV5056A3QDBZ Hall sensor.
+1. Hall sensor: saved DRV5056A3QDBZ; final selection to reconfirm.
 2. 1 µF capacitor from the sensor's 3.3 V supply to ground.
 3. 100 Ω series resistor between the sensor output and the ADS7953 channel.
 4. 1 µF capacitor from the ADC-side of that resistor to ground.
@@ -160,8 +174,8 @@ Do **not** include Fluxpad's per-key LED components: the 22 Ω LED resistor
 Hall signal path. This design has no per-key LEDs, avoiding their power,
 routing, cost, and firmware requirements.
 
-The 100 Ω + 1 µF output filter intentionally smooths the Hall signal. The ADC
-has ample scan-rate margin, but validate this filter's effect on velocity timing
+The 100 Ω + 1 µF output filter intentionally smooths the Hall signal. Neither
+headline ADC speed nor the reference-unit readings qualify settling; validate this filter's effect on velocity timing
 with the completed 12-key prototype before finalizing its values.
 
 ### 3.5 Key mechanism
@@ -171,9 +185,9 @@ with the completed 12-key prototype before finalizing its values.
   and reproduce Fluxpad V2 local sensor geometry with a **1.0 mm PCB**; the
   saved Keyboard12 PCB is still 1.6 mm and its placed sensor geometry differs.
 - Use **DSA-profile, Cherry-MX-stem keycaps**. The Fluxpad source includes the
-  reference CAD model at `../fluxpad/CAD/DSA_Keycap_CherryMX.step`.
+  [reference CAD model](https://github.com/sssata/fluxpad/blob/8b2e752136033a81b9da01566e2e36ccafb966d6/CAD/DSA_Keycap_CherryMX.step).
 - Use the switch's built-in magnet; verify its alignment, polarity and clearance
-  against the DRV5056A3QDBZ and the physical Fluxpad reference.
+  against the approved sensor package and the physical Fluxpad reference.
 - Fluxpad's Gateron Red switches and Kailh MX hot-swap sockets are for its
   separate digital keys and are not part of this all-analog keyboard design.
 
@@ -238,11 +252,13 @@ TinyUSB CDC-serial + USB-MIDI (as in the existing `main.c`).
 - A dedicated 3.3 V regulator for the key boards. Do **not** power all 60
   sensors and five ADCs from the Pico 2's 3.3 V regulator. A standard
   Raspberry Pi Pico's `3V3_OUT` is limited to about 300 mA, below the estimated
-  sensor load alone: **360 mA typical / 600 mA maximum** for 60 sensors,
+  DRV5056 sensor load alone: **360 mA typical / 600 mA maximum** for 60 sensors,
   before ADCs, references, master and losses. Feed the key boards from a carrier-mounted
   5 V-to-3.3 V regulator rated for **at least 1 A**, with a shared ground to
   the Pico 2. A 1 A regulator rating alone does not validate the USB input-current
   budget; check the source/current contract, efficiency, cable drop and startup.
+  These sensor figures apply to DRV5056, not OH49E-S; recalculate if the sensor
+  changes rather than substituting a different part's typical current as a maximum.
 - On the carrier USB-C circuit, include 5.1 kΩ pull-down resistors from CC1
   and CC2 to ground, USB ESD protection at the receptacle, and short parallel
   D+/D− traces over a continuous ground plane. Connect USB 5 V to the Pico
@@ -304,7 +320,7 @@ and scan scheduling for the main controller:
 |--------------------------------|-----|---------|---------|
 | Raspberry Pi Pico 2 module (master) | 1 | TBD | TBD |
 | ADS7953SDBTR ADC (C701670), screenshot price 2026-11-02 | 6 | $8.5952 | $51.57 |
-| DRV5056A3QDBZ Hall sensor      | 60  | TBD      | TBD     |
+| Hall sensor (saved DRV5056A3; selection to reconfirm) | 60 | TBD | TBD |
 | Gateron KS-20 White switch (built-in magnet) | 60 | TBD | TBD |
 | USB-C + MCU support (master)   | 1   | $3.50   | $3.50   |
 | Passives / conns (all boards)  | batch | —     | ~$12.00 |
@@ -318,7 +334,7 @@ and extend the note map; no MCU change required.
 
 ## 9. Open items / decisions pending
 
-- **Next pre-routing task:** resolve the placed sensor-footprint discrepancy
+- **Next pre-routing task:** reconfirm the sensor with the owner, then resolve the placed sensor-footprint discrepancy
   against Fluxpad V2, verify mapping/orientation and implement the approved
   1.0 mm thickness through Konnect. The owner selected ADS7953 / REF5025,
   Range 1; full theoretical sensor coverage is not guaranteed, but actual switch
@@ -336,8 +352,9 @@ and extend the note map; no MCU change required.
   0–2.5 V range across representative units and operating conditions.
 - Verify the Pico 2 footprint, underside USB-test-pad routing, and USB-C
   connector mechanical clearance before laying out the master carrier board.
-- Confirm DRV5056A3QDBZ / LCSC C85573 availability and current pricing before
-  ordering; it replaces the previously proposed SS49E.
+- Confirm the approved sensor's exact MPN, catalog identity, availability and
+  pricing before ordering. **C85573 identifies OH49E-S, not DRV5056A3**; do not
+  order or update assembly fields using the previous incorrect association.
 - Confirm KS-20 White exact variant, availability and pricing before ordering;
   no current switch cost is established. Validate the complete mechanical stack
   and final magnet-to-sensor travel against the official specification and reference.
@@ -376,12 +393,13 @@ ADC rather than relying on Global Sourcing or consigned parts.
 ## 10. References
 
 - ADS79xx datasheet (SLAS605C) — TI.
-- ADS7886 (single-channel fast ADC) and ADS7953 (16-ch) as fallback options.
+- ADS7953 (16-channel) is selected. A single-channel ADS7886 is not a direct
+  replacement for the required 12-/16-channel board ADC.
 - `examples/fluxpad_midi/src/main.c` (two-threshold velocity algorithm) — reference firmware.
-- `../fluxpad/ECAD/FluxpadKicad` — existing KiCad project whose
-  `Fluxpad.kicad_sch` uses the DRV5056A3QDBZ sensor and whose
-  `SW_Cherry_MX_PCB_1.00u_hall_effect` footprint, sensor support circuitry,
+- [Fluxpad reference KiCad project](https://github.com/sssata/fluxpad/tree/8b2e752136033a81b9da01566e2e36ccafb966d6/ECAD/FluxpadKicad) — existing project whose
+  `Fluxpad.kicad_sch` retains DRV5056-labelled symbols but assigns OH49E-S / C85573;
+  its `SW_Cherry_MX_PCB_1.00u_hall_effect` footprint, sensor support circuitry,
   USB-C footprint, and JLC gerber export pipeline are the source design to
   reuse.
-- `../fluxpad/CAD/DSA_Keycap_CherryMX.step` — DSA-profile, Cherry-MX-stem
+- [Fluxpad DSA keycap CAD model](https://github.com/sssata/fluxpad/blob/8b2e752136033a81b9da01566e2e36ccafb966d6/CAD/DSA_Keycap_CherryMX.step) — DSA-profile, Cherry-MX-stem
   keycap reference model.

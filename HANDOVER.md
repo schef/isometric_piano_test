@@ -10,6 +10,13 @@ measurement, not Keyboard12's saved **1.6 mm**. See
 footprint discrepancy and remaining validation. This supersedes the older
 Lekker selection and pending-range discussion. No KiCad changes applied.
 
+**Later sensor finding:** Fluxpad V2 uses a DRV5056-labelled symbol but specifies
+**C85573 = OH49E-S** in both schematic sourcing fields and its assembly database.
+The catalog marking and owner's measurements support OH49E-S in the reference
+unit. Keyboard12 still specifies DRV5056A3; **reconfirm the sensor with the owner
+before implementing sensing changes**. No substitution is approved. See
+[FLUXPAD_SENSOR_IDENTIFICATION.md](FLUXPAD_SENSOR_IDENTIFICATION.md).
+
 Switch reference: [official KS-20 White engineering specification (PDF)](https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf),
 especially page 5 for the cross-section, polarity and mechanical dimensions.
 
@@ -23,7 +30,8 @@ only; building or flashing it is not part of this handover.
 ## Where to start
 
 Read [TODO.md](TODO.md) for the current cross-session checklist and update it
-as work is verified. The next task is the placed sensor-footprint comparison.
+as work is verified. The next task is owner reconfirmation of the intended
+sensor, followed by the placed sensor-footprint comparison.
 
 Open **`ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pro`** in KiCad.
 
@@ -44,8 +52,9 @@ was not found in the inspected `ECAD/` inventory; confirm its status with the ow
 
 ## Intended architecture
 
-- Five identical 12-key boards, each with 12 DRV5056A3QDBZ Hall sensors and an
-  ADS7953SDBT SPI ADC; no MCU on the key boards.
+- Five identical 12-key boards, each with 12 Hall sensors and an ADS7953 SPI ADC;
+  no MCU on the key boards. Saved Keyboard12 specifies DRV5056A3QDBZ, but final
+  sensor selection needs reconfirmation; the ADC sourcing choice is ADS7953SDBTR.
 - Gateron KS-20 White switches and DSA-profile, MX-stem keycaps.
 - A Pico 2 master carrier, USB-C connection, and dedicated 3.3 V sensor-board supply.
 - Shared SPI data/clock lines and a separate chip-select for each board.
@@ -61,7 +70,7 @@ placed or wired in the KiCad project. Reconcile the actual design with
 **2026-11-02 initial schematic review:** see [SCHEMATIC_REVIEW.md](SCHEMATIC_REVIEW.md).
 ERC reports zero violations, but datasheet review confirms an ADC input-range
 limitation: with the existing 3.3 V analog supply and 2.5 V reference, Range 1
-does not cover the Hall sensor's full possible output, and Range 2 does not meet
+does not cover the specified DRV5056's full possible output, and Range 2 does not meet
 the specified supply condition. Actual switch clipping is not measured. The
 reference generator's 3.3 V input is not itself the identified problem. The review
 also records a higher sensor worst-case current. The earlier missing-sixth-CS
@@ -80,7 +89,9 @@ attenuation. Earlier alternatives remain recorded in `SCHEMATIC_REVIEW.md` as
 historical options, not pending selections. Validate actual sensor output versus
 travel, range margin and dynamic velocity/release crossings on the selected
 KS-20 / Fluxpad geometry; the preliminary one-key measurement does not qualify
-worst-case coverage.
+worst-case coverage or establish DRV5056A3 behaviour: the measured reference is
+strongly identified as OH49E-S. Recalculate sensor-dependent power and range
+checks for whichever sensor is approved.
 
 ### Owner's current state and blocking concern
 
@@ -97,7 +108,8 @@ worst-case coverage.
   The sixth board is the Pico 2 master carrier, not an additional sensor board.
   Five chip-select lines suffice; there is no sixth-sensor-board expansion
   requirement. Keep the current 60-key mechanical scope and MIDI map.
-- Next milestone: resolve the placed sensor-footprint discrepancy, apply approved
+- Next milestone: reconfirm sensor selection, resolve the placed sensor-footprint
+  discrepancy, apply approved
   geometry/thickness changes through Konnect, and complete remaining electrical
   checks before routing. Firmware development is not the immediate task.
 

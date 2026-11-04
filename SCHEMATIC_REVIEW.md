@@ -6,6 +6,12 @@
 > longer pending; the full theoretical sensor-range limitation remains true,
 > while prototype coverage and other review items remain unvalidated.
 
+> **Later sensor finding:** Fluxpad V2's assembly fields identify OH49E-S /
+> C85573 despite its DRV5056 symbol label. The DRV5056 range/current calculations
+> below still describe the saved Keyboard12 design, not the measured Fluxpad.
+> Reconfirm the main-board sensor before sensing changes; no substitution is
+> approved. See [FLUXPAD_SENSOR_IDENTIFICATION.md](FLUXPAD_SENSOR_IDENTIFICATION.md).
+
 ## Scope and evidence
 
 Initial electrical review of the saved single-sheet design:
@@ -21,9 +27,6 @@ PCB/mechanical audit. Unsaved edits in an editor are outside this review.
 - Native KiCad netlist and 4096-pixel schematic render were exported and inspected.
   When Konnect's connectivity query returned null for unnamed nets (including
   GPIO pulls and reference Trim/NR), the native KiCad netlist was used as authority.
-- Session artifacts: `/tmp/opencode/Keyboard12-erc.json`, `Keyboard12.net`,
-  `Keyboard12-net-summary.json`, and `Keyboard12.png`. These are temporary files,
-  not a production package or durable repository evidence bundle.
 
 ## 1. Pre-routing blocker: ADC input-range compatibility
 
@@ -157,7 +160,8 @@ establish the direction of voltage change when pressing; do not assume the
 Fluxpad example's falling thresholds apply unchanged.
 
 Future prototype measurements should use the selected KS-20 White mechanism,
-the intended DRV5056A3 placement and a representative 3.3V supply:
+the owner-reconfirmed sensor and verified placement, and a representative 3.3V
+supply. The preliminary OH49E-S reference-unit readings do not qualify DRV5056A3:
 
 1. Measure local sensor supply and OUT-to-GND voltage at rest, through travel
    and at bottom-out. Record voltage against position, including both travel
@@ -253,6 +257,9 @@ not verified. Daisy-chain and star wiring are not signal-integrity equivalents.
 
 TI specifies **6mA typical, 10mA maximum per DRV5056** (SBAS644C p. 5):
 
+These figures apply to the saved DRV5056 design. Recalculate for the approved
+part if sensor selection changes; they are not OH49E-S current specifications.
+
 - One 12-key board: 72mA typical / 120mA maximum, sensors alone.
 - Five boards: 360mA typical / **600mA maximum**, sensors alone.
 
@@ -274,7 +281,7 @@ be validated on the actual mechanism. ADC charge redistribution, cross-channel
 steps and available acquisition time must also be checked; scan-rate headroom
 alone does not prove 12-bit settling.
 
-### Protocol statements in PCB_DESIGN.md need correction
+### Protocol findings — PCB_DESIGN.md guidance corrected
 
 SLAS605C section 8.1 specifies that each frame begins on a **CS falling edge**,
 with 16 clocks per conversion. Keeping CS low for a whole 12-channel sweep, as
@@ -313,7 +320,8 @@ fits electrically, but owner-provided JLCPCB screenshots show zero stock,
 pre-order only, at an estimated US$33.0809 each. It fails the normal-stock
 requirement and is not selected; no schematic changes have been made.
 
-The owner has selected ADS7953 / REF5025, Range 1. Next resolve the placed
+The owner has selected ADS7953 / REF5025, Range 1. First reconfirm sensor
+selection following the OH49E-S finding; no substitution is approved. Then resolve the placed
 sensor-footprint discrepancy against Fluxpad and apply approved geometry/thickness
 changes through Konnect. Review the five-board interconnect, power budget and
 protocol; repeat ERC/netlist review after schematic changes and complete the

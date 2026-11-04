@@ -12,8 +12,13 @@ keys on a Fluxpad V2, not the main project's SPI sensor boards or Pico 2.
 | key_3 | 27 | 64 | E4 |
 | key_2 | 28 | 67 | G4 |
 
-The Fluxpad V2 schematic identifies TI DRV5056A3QDBZ Hall sensors. Current
-Fluxpad V2 specifications identify Gateron KS-20 switches; the GitHub README's
+The Fluxpad V2 schematic uses a TI DRV5056A3-labelled symbol, but its assembly
+fields and database specify **OH49E-S / C85573**. Catalog marking 1320 and the
+owner's measurements strongly support OH49E-S in the physical reference. Do not
+attribute these readings or the example thresholds to DRV5056A3. See
+[the sensor investigation](../../FLUXPAD_SENSOR_IDENTIFICATION.md).
+
+Current Fluxpad V2 specifications identify Gateron KS-20 switches; the GitHub README's
 Lekker description belongs to an older SAMD21 model. The exact historical
 variant in the owner's reference unit is not independently certified. The main
 controller's approved switch is KS-20 White; see

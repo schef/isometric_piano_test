@@ -29,6 +29,16 @@ Fluxpad V2 switch/sensor geometry and PCB thickness. Upstream thickness is
 Read `SWITCH_RANGE_DECISION.md` for measurement limits, the actual PCB footprint
 discrepancy and remaining validation. No KiCad changes applied for this decision.
 
+**Later 2026-11-04 sensor finding:** Fluxpad V2's DRV5056-labelled symbols and
+assembly database specify **C85573 = OH49E-S**, not DRV5056A3. Catalog marking
+1320 and the owner's half-supply baseline support this identification. Read
+`FLUXPAD_SENSOR_IDENTIFICATION.md`. Keyboard12 still specifies DRV5056A3;
+reconfirm sensor selection with the owner before implementing sensing changes.
+No OH49E-S substitution is approved. Do not use the measured Fluxpad voltages
+to qualify DRV5056A3 or use C85573 as its sourcing code. Review sensor-dependent
+power, polarity, range and geometry after the decision; retain ADS7953 / REF5025
+Range 1 as the selected ADC strategy, not as measured prototype qualification.
+
 Owner clarification: work paused just before routing because a previous AI
 flagged a possible ADS7953 reference-voltage issue. Initial review confirmed an
 input-range limitation, not failed REF5025 supply headroom; actual switch clipping

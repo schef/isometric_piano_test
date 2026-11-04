@@ -7,6 +7,12 @@ REF5025, Range 1 (0–2.5 V). MAX11131 is not selected. The evaluation below rec
 the earlier alternative and sourcing evidence, not a pending replacement decision.
 See [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md).
 
+**Later sensor clarification:** this evaluation used the saved Keyboard12
+DRV5056 specifications, not the measured Fluxpad sensor. Upstream assembly fields
+and catalog evidence strongly identify the reference sensor as OH49E-S / C85573.
+Main-board sensor selection needs reconfirmation; no sensor substitution or ADC
+replacement is approved. See [FLUXPAD_SENSOR_IDENTIFICATION.md](FLUXPAD_SENSOR_IDENTIFICATION.md).
+
 **Electrically promising; not approved as the production replacement.**
 MAX11131 supports a single 3.3V supply and a supply-level reference, removing
 the ADS7953 input-range mismatch without adding a 5V inter-board rail.
@@ -31,7 +37,6 @@ master carrier: 60 keys and five CS lines. There is no sixth-sensor-board requir
   **19-6026, Rev. 5, September 2012**, retrieved from a third-party mirror.
   Manufacturer PDF/product-page requests failed or timed out during this session.
   Confirm the latest official datasheet and errata before final selection.
-- Temporary source files: `/tmp/opencode/max11131.pdf` and `max11131.txt`.
 
 ## Electrical fit
 

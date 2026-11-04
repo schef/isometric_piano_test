@@ -2,6 +2,13 @@
 
 ## Owner-approved direction
 
+**Later finding on the same date:** Fluxpad's sourcing fields and assembly
+database identify **OH49E-S / C85573**, despite the DRV5056 symbol label.
+The following records the earlier decision; retention of DRV5056A3 now needs
+owner reconfirmation before sensing changes. No OH49E-S substitution is approved.
+The KS-20 White, 1.0 mm target and ADS7953 / REF5025 Range 1 decisions remain
+recorded. See [FLUXPAD_SENSOR_IDENTIFICATION.md](FLUXPAD_SENSOR_IDENTIFICATION.md).
+
 - Use **Gateron KS-20 White** magnetic switches instead of the previously
   specified Wooting Lekker V2 L60.
 - Retain **DRV5056A3QDBZ**, the existing **ADS7953 / REF5025 2.5 V reference**,
@@ -26,22 +33,23 @@ Analog Discovery 3. Supply measurement was approximately **3.3068 V**, consisten
 with the multimeter. The middle analog key showed approximately **1.48 V released**
 and **0.87 V fully pressed**, probing the raw sensor-output side of R14.
 The owner confirmed that noisy near-zero sections were probe movement.
-No output above 2.5 V was observed in the inspected video; this is not a
+No output above 2.5 V was reported in the preliminary measurements; this is not a
 certified maximum across units, travel, temperature or mechanical tolerances.
 
-Local session evidence:
-
-- `/home/bebox/Videos/2026-11-03 14-53-40.mp4`: useful screen recording.
-- `/home/bebox/Videos/fluxpad_keypress_values.csv`: only one second of near-zero
-  disconnected-probe noise; **not valid keypress waveform data**.
-
-These files are outside the repository and are not a durable evidence bundle.
+In a subsequent test at the same raw R14 point, lifting the switch approximately
+1 mm away from the sensor gave **1.56 V released / 1.17 V pressed**; with the
+switch fully removed the output was **1.63 V**. The marking **1320 / 152D**,
+half-supply baseline and upstream sourcing evidence strongly support OH49E-S.
+These readings must not be attributed to DRV5056A3 or used to qualify it.
 
 ## Comparison findings
 
-Both saved schematics specify DRV5056A3, 3.3 V sensing, 100-ohm series filtering
-and nominal 1 uF ADC-side capacitors. Fluxpad uses the RP2040 ADC; Keyboard12
-uses ADS7953. Equivalent static voltage does not prove ADS7953 input settling.
+Both saved schematics use a DRV5056A3 symbol label, 3.3 V sensing, 100-ohm
+series filtering and nominal 1 uF ADC-side capacitors. However, Fluxpad's
+`JLC PN = C85573` identifies OH49E-S, so matching symbol names do not establish
+matching sensors. Fluxpad uses the RP2040 ADC; Keyboard12 uses ADS7953.
+Neither static reference-unit readings nor common pin roles prove electrical
+equivalence or ADS7953 input settling.
 
 The local footprint library matches the upstream switch/sensor pad geometry,
 but the sensor pad positions relative to the switch centre in the saved
@@ -58,14 +66,17 @@ that all historical units have identical magnets.
 
 ## Remaining validation
 
-1. Resolve the footprint discrepancy and verify the complete mechanical stack
+1. Reconfirm the main-board sensor with the owner; explicitly evaluate OH49E-S
+   if reproducing the physical Fluxpad response is the goal. Recheck sourcing,
+   polarity, range, power and package geometry for the approved part.
+2. Resolve the footprint discrepancy and verify the complete mechanical stack
    against the reference unit/design. PCB thickness is confirmed by the owner's
    1.0 mm measurement; apply that target through Konnect when implementing.
-2. Check several KS-20/sensor pairs on a prototype over full travel. Establish
+3. Check several KS-20/sensor pairs on a prototype over full travel. Establish
    range margin including supply, component and mechanical variation; per-key
    calibration cannot recover a clipped signal.
-3. Validate ADC settling, RC response and eventual velocity thresholds separately.
-4. Continue the interconnect, power, protocol, library and ERC/DRC reviews.
+4. Validate ADC settling, RC response and eventual velocity thresholds separately.
+5. Continue the interconnect, power, protocol, library and ERC/DRC reviews.
    The range strategy is selected; these other blockers are not cleared.
 
 ## Sources
