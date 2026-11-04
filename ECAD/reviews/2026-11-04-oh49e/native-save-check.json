@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-04",
+  "comparison": "HEAD schematic versus owner native-editor save",
+  "net_count": 46,
+  "all_net_endpoint_sets_preserved": true,
+  "embedded_definition_counts": {
+    "Keyboard12:OH49E-S": 1,
+    "Keyboard12:OH49E-S_EasyEDA": 1
+  },
+  "tab_only_blank_lines": 0,
+  "erc_report": "erc-native-save.json",
+  "pcb_unchanged": true,
+  "sha256": {
+    "ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_sch": "571002d025c4f6c3fe902d1bf813fb1036c1165bdc7015a5c599270a113bd51a",
+    "ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pcb": "8c724b1023fb863e57dbbf02b00c902ed23cfad3352fadfd202e62b15c0313a0"
+  }
+}

@@ -4,6 +4,15 @@
 
 ### Resume next session — cleanup before PCB migration
 
+**Cleanup verified later on 2026-11-04:** owner corrected library property
+fields in Footprint Editor; older geometry reintroduced by that save was
+reconciled through Konnect while retaining corrected fields. Native schematic
+save reduced each embedded-symbol group to one definition and removed tab-only
+blank lines. ERC zero violations; all 46 native net endpoint sets preserved.
+See `ECAD/reviews/2026-11-04-oh49e/native-save-check.json` and `TODO.md`.
+Next restore PCB transport and review the update plan; do not repeat the
+completed cleanup instructions below. PCB remains unchanged at 1.6 mm.
+
 Owner paused before being guided through native KiCad cleanup. **Start by guiding
 the owner in Footprint Editor to correct the combined footprint's inherited
 Value/Datasheet/Description property fields**, which still show Lekker/DRV5056.

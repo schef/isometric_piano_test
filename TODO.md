@@ -92,7 +92,7 @@ implemented. PCB geometry, physical stackup and assembly validation remain pendi
 - [ ] Restore PCB Editor transport, review coordinated net reassignment and
   footprint replacement/refresh, then verify all sensor pads before saving.
   A blind library refresh would preserve the wrong legacy pin-number/net map.
-- [ ] Resolve Konnect serialization artifacts before schematic sign-off: twelve
+- [x] Resolve Konnect serialization artifacts before schematic sign-off: twelve
   identical OH49E-S embedded definitions and tab-only blank lines. Native ERC,
   netlist comparison and rendering pass; library-refresh dry run offers no change.
   See `OH49E_SCHEMATIC_MIGRATION.md`. No manual design-source text cleanup allowed.
@@ -101,7 +101,11 @@ implemented. PCB geometry, physical stackup and assembly validation remain pendi
   Value/Datasheet/Description property fields. Cleanup is blocked pending
   supported Konnect functionality or owner changes through KiCad's native editors;
   source text edits are not an approved workaround. Native editor save may
-  normalize duplicate definitions, but this must be verified after save.
+   normalize duplicate definitions, but this must be verified after save.
+   **Verified after owner native save:** one definition per symbol group, no
+   tab-only blank lines, ERC zero violations, all 46 native net endpoint sets
+   preserved. Evidence: `ECAD/reviews/2026-11-04-oh49e/native-save-check.json`
+   and `erc-native-save.json`. Earlier blocker text above is historical.
 - [x] Investigate existing sensor/switch CAD alternatives before more custom
   library edits: stock KiCad, HE60, Drachma and LCSC/EasyEDA. Evidence:
   `ONLINE_PARTS_INVESTIGATION.md`; no external design assets imported.
@@ -186,6 +190,23 @@ main 60-key controller implementation.
 
 ### 2026-11-04
 
+- Owner saved schematic in native KiCad. Verified embedded definitions reduced
+  from twelve to one per native/EasyEDA group, and tab-only blank lines removed.
+  Native KiCad XML netlist comparison against HEAD preserves all 46 complete
+  endpoint sets; ERC at info severity reports zero errors/warnings/violations.
+  Evidence: `ECAD/reviews/2026-11-04-oh49e/native-save-check.json` and
+  `erc-native-save.json`. PCB hash unchanged; no synchronization or release.
+- Owner corrected combined-footprint Value/Datasheet/Description in native
+  Footprint Editor and saved. Readback also found older pad/artwork geometry,
+  through-hole classification and removed model references had returned. After
+  owner closed the editor, reconciled those items through Konnect, retaining
+  the owner's corrected properties and C85573. Read-only structural comparison
+  against HEAD verified all pads, artwork, text and keepout (ignoring UUIDs/order),
+  SMD classification and metadata match the reviewed checkpoint; no model blocks.
+  PCB SHA-256 remains
+  `8c724b1023fb863e57dbbf02b00c902ed23cfad3352fadfd202e62b15c0313a0`.
+  Library-default property cleanup is verified; schematic native-save/deduplication
+  and ERC/netlist recheck remain pending. No PCB synchronization or release.
 - Session paused at owner's request for commit/push and later continuation.
   Next session: guide native KiCad library-property cleanup and schematic save,
   verify duplicate counts afterward, then repeat ERC/netlist checks. Current
