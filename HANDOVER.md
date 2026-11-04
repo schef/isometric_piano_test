@@ -2,6 +2,42 @@
 
 ## Current decision — 2026-11-04
 
+### Resume next session — cleanup before PCB migration
+
+Owner paused before being guided through native KiCad cleanup. **Start by guiding
+the owner in Footprint Editor to correct the combined footprint's inherited
+Value/Datasheet/Description property fields**, which still show Lekker/DRV5056.
+Then guide opening/saving the schematic in Schematic Editor and verify whether
+duplicate embedded definitions have been normalized. Do not assume saving fixes
+them; inspect afterward and rerun ERC/native-netlist checks. Konnect 0.13.0
+exposes neither required property editing nor embedded-definition deduplication;
+do not bypass the Konnect-only source-edit restriction with text edits.
+
+Current active symbol is `Keyboard12:OH49E-S_EasyEDA`, numbering **1 VCC / 2 OUT /
+3 GND**. Geometry/wiring checks pass, but identical embedded definitions remain
+(12 native unused, 12 EasyEDA active). PCB remains untouched/unsynchronized and
+1.6 mm; approved target remains 1.0 mm. No routing or fabrication approval.
+See `OH49E_EASYEDA_NUMBERING.md`, `OH49E_FOOTPRINT_MIGRATION.md` and `TODO.md`.
+
+The working tree also contains unrelated `Keyboard12.kicad_pro` normalization
+changes; those were left unstaged for this checkpoint. Do not discard them.
+
+**Latest numbering correction:** use owner-selected EasyEDA convention
+**1 VCC / 2 VOUT / 3 GND**. Symbol and library footprint are updated consistently;
+physical wiring/geometry unchanged, PCB not synchronized. See
+`OH49E_EASYEDA_NUMBERING.md`; earlier native-numbering reports are historical.
+
+**Latest approval:** owner selected **OH49E-S / C85573** as the main-board sensor
+after review of `OH49E_EVALUATION.md`. This supersedes pending sensor
+reconfirmation and earlier DRV5056 retention guidance below. Schematic U3–U14
+now use native-pinout OH49E-S and a remapped combined footprint through the
+`Keyboard12_OH49E` alias; the PCB remains legacy/unsynchronized. See
+`OH49E_FOOTPRINT_MIGRATION.md` for geometry/ERC/netlist evidence and remaining
+keepout, metadata, assembly and stackup gates. Next restore PCB Editor transport
+and review coordinated pin/net and geometry changes through Konnect; do not
+blind-refresh legacy PCB instances.
+No prototype qualification or fabrication approval is implied.
+
 Owner selected **Gateron KS-20 White**, the existing **2.5 V reference /
 ADS7953 Range 1**, and copying Fluxpad V2's sensing geometry and PCB thickness.
 The upstream board specifies **1.0 mm**, confirmed by the owner's physical
@@ -13,8 +49,8 @@ Lekker selection and pending-range discussion. No KiCad changes applied.
 **Later sensor finding:** Fluxpad V2 uses a DRV5056-labelled symbol but specifies
 **C85573 = OH49E-S** in both schematic sourcing fields and its assembly database.
 The catalog marking and owner's measurements support OH49E-S in the reference
-unit. Keyboard12 still specifies DRV5056A3; **reconfirm the sensor with the owner
-before implementing sensing changes**. No substitution is approved. See
+unit. The owner has since approved OH49E-S and the schematic/footprint migration
+is recorded above; the PCB remains legacy. See
 [FLUXPAD_SENSOR_IDENTIFICATION.md](FLUXPAD_SENSOR_IDENTIFICATION.md).
 
 Switch reference: [official KS-20 White engineering specification (PDF)](https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf),
@@ -30,8 +66,8 @@ only; building or flashing it is not part of this handover.
 ## Where to start
 
 Read [TODO.md](TODO.md) for the current cross-session checklist and update it
-as work is verified. The next task is owner reconfirmation of the intended
-sensor, followed by the placed sensor-footprint comparison.
+as work is verified. The next task is restoring PCB Editor transport and
+reviewing coordinated net/geometry migration; see `OH49E_FOOTPRINT_MIGRATION.md`.
 
 Open **`ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pro`** in KiCad.
 

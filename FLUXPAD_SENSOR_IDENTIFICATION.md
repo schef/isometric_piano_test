@@ -1,5 +1,11 @@
 # Fluxpad V2 fitted Hall sensor investigation — 2026-11-04
 
+> **Subsequent owner approval:** OH49E-S / C85573 is now selected for the main
+> board, superseding the pending-reconfirmation statements in this investigation.
+> See `OH49E_EVALUATION.md` for mapping cautions and remaining qualification.
+> The schematic has subsequently been migrated; PCB/footprint work remains open.
+> See `OH49E_SCHEMATIC_MIGRATION.md` for the implemented state and verification.
+
 ## Finding
 
 **Fluxpad V2's schematic label and assembly identity disagree.** The symbol is
@@ -67,6 +73,13 @@ These parts have the same nominal three-pin supply/ground/output roles, making
 a pad-compatible substitution plausible. Matching pins does not establish
 identical package clearances, sensitivity, polarity response, bandwidth, noise,
 current, acquisition behaviour or calibrated thresholds.
+
+**Follow-up mapping check:** their manufacturer pin numbers differ: OH49E-S is
+1 VCC / 2 GND / 3 VOUT; DRV5056 SOT-23 is 1 VCC / 2 OUT / 3 GND. The custom
+combined footprint uses DRV-style numbering, including pad 3 for its isolated
+ground land. Physical mapping and assembly orientation must be checked explicitly;
+do not attach a standard OH49E-S symbol to this footprint unchanged. See
+[the preliminary evaluation](OH49E_EVALUATION.md).
 
 ## Owner's additional measurements
 

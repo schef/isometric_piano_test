@@ -22,6 +22,28 @@ validation and retaining references to evidence.
 
 ## Main project priorities
 
+**Latest 2026-11-04 owner approval supersedes pending sensor reconfirmation below:**
+select **OH49E-S / C85573** as the main-board sensor following
+`OH49E_EVALUATION.md`. **Latest numbering correction:** owner selected EasyEDA
+convention **1 VCC / 2 VOUT / 3 GND**, superseding the earlier native/PDF choice.
+The schematic uses `Keyboard12:OH49E-S_EasyEDA`
+on U3–U14; the PCB remains legacy/unsynchronized. The local combined footprint
+has been remapped and assigned through the `Keyboard12_OH49E` project alias.
+See `OH49E_FOOTPRINT_MIGRATION.md` for geometry/ERC/netlist evidence and open
+gates. The alias and Tang point at the same modified local `.pretty` directory;
+its pads now also use EasyEDA numbering. See `OH49E_EASYEDA_NUMBERING.md`.
+Physical functional wiring/geometry was preserved and ERC/netlist checks pass.
+Legacy PCB pad roles already match 2 output / 3 ground; do not apply an extra
+2/3 net swap from the superseded native-numbering reports. Restore PCB transport
+and review current schematic/library geometry migration with pad/net readback.
+Review inner-layer keepout coverage, library-default metadata, assembly origin,
+1.0 mm physical stackup and serialization cleanup before sign-off.
+Recalculate sensor-dependent power and range checks. No
+prototype qualification or fabrication approval is implied by this schematic
+migration. Require a reviewed PCB-update plan and verified pad readback; current
+PCB-update dry run is blocked by project-manager transport. Use Konnect for
+all design-source modifications.
+
 **2026-11-04 owner decision supersedes the older pending-range/Lekker text:**
 use Gateron KS-20 White, retain ADS7953 / REF5025 2.5 V Range 1, and reproduce
 Fluxpad V2 switch/sensor geometry and PCB thickness. Upstream thickness is

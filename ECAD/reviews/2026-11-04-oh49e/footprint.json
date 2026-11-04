@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-04",
+  "method": "Read-only KiCad 10.0.6 footprint load into unsaved in-memory scratch board, TOP_BOTTOM flip to B.Cu, then reference U3 rotation/position; no board save. Native pad numbers remapped to reference functional roles. AST verifies existing NPTH holes and keepout unchanged; transformed line geometry compared with pinned reference.",
+  "footprint": "ECAD/Keyboard12/Keyboard12/libraries/Fluxpad/Fluxpad.pretty/SW_Cherry_MX_PCB_1.00u_hall_effect.kicad_mod",
+  "reference_commit": "8b2e752136033a81b9da01566e2e36ccafb966d6",
+  "reference_designator": "U3",
+  "native_mapping": {
+    "1": "VCC",
+    "2": "GND",
+    "3": "VOUT"
+  },
+  "checks": {
+    "reference_pad_positions_match": true,
+    "reference_pad_sizes_and_layers_match": true,
+    "reference_line_geometry_matches": true,
+    "original_npth_holes_preserved": true,
+    "original_keepout_preserved": true,
+    "unqualified_3d_models_detached": true
+  },
+  "transformed_pads": [
+    {
+      "native_pad": "1",
+      "reference_pad": "1",
+      "x_mm": 159.05,
+      "y_mm": 128.2625,
+      "size_mm": [
+        1.475,
+        0.6
+      ]
+    },
+    {
+      "native_pad": "3",
+      "reference_pad": "2",
+      "x_mm": 160.95,
+      "y_mm": 128.2625,
+      "size_mm": [
+        1.475,
+        0.6
+      ]
+    },
+    {
+      "native_pad": "2",
+      "reference_pad": "3",
+      "x_mm": 160.0,
+      "y_mm": 130.1375,
+      "size_mm": [
+        1.475,
+        0.6
+      ]
+    }
+  ],
+  "remaining": [
+    "Live PCB update not applied",
+    "Physical clearances, active Hall-point location, assembly rotation/origin and stackup need review",
+    "Original keepout only lists F.Cu/B.Cu plus F.SilkS; inner copper coverage on four-layer board is not qualified",
+    "Library default Value/Datasheet properties retain legacy metadata; placed schematic fields are authoritative until supported library-property editing is available"
+  ],
+  "footprint_sha256": "a60afbe10ea4a175ef780b2e85956527fc9b9a1966ab39400b033957b5acdd59"
+}

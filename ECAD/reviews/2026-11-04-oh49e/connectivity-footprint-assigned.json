@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-04",
+  "method": "Native KiCad netlist endpoint-set comparison against pre-OH49E schematic, normalized for intended old sensor 2->new 3 and old 3->new 2 renumbering. Footprint IDs and supply/GND/output endpoints checked on all U3-U14.",
+  "net_count": 46,
+  "equivalent_connectivity_after_pin_remap": true,
+  "assigned_sensor_count": 12,
+  "footprint_id": "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect",
+  "pcb_synchronized": false,
+  "sha256": {
+    "ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_sch": "36e0d211e471a09838d563dda24e123b9201ca30692fe5119ff58d0356343ee3",
+    "ECAD/Keyboard12/Keyboard12/libraries/Fluxpad/Fluxpad.pretty/SW_Cherry_MX_PCB_1.00u_hall_effect.kicad_mod": "a60afbe10ea4a175ef780b2e85956527fc9b9a1966ab39400b033957b5acdd59",
+    "ECAD/Keyboard12/Keyboard12/fp-lib-table": "8473802fa212eaf9b803fe426685a578d0a9b16b4441d4822f7cf82c84dc468f",
+    "ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pcb": "8c724b1023fb863e57dbbf02b00c902ed23cfad3352fadfd202e62b15c0313a0"
+  }
+}

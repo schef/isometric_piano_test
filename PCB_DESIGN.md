@@ -1,5 +1,19 @@
 # PCB Design — 60-Key Velocity-Sensitive MIDI Keyboard (Winner: SPI Bus / Design B)
 
+> **Latest numbering correction:** owner selected **1 VCC / 2 VOUT / 3 GND**
+> (EasyEDA convention). Implemented in `Keyboard12:OH49E-S_EasyEDA` and assigned
+> combined footprint; physical functional wiring/geometry unchanged. See
+> `OH49E_EASYEDA_NUMBERING.md`. Earlier native-numbering statements are historical.
+
+> **Latest sensor approval (2026-11-04):** select **OH49E-S / C85573**, superseding
+> earlier DRV5056 retention and pending-reconfirmation text below. The schematic
+> now uses native-pinout OH49E-S with the remapped combined footprint assigned
+> through `Keyboard12_OH49E`; the PCB is not synchronized. See
+> `OH49E_FOOTPRINT_MIGRATION.md` for remaining gates.
+> Resolve differing manufacturer/custom-footprint pin numbers
+> and placed geometry before implementation; recalculate power for OH49E-S.
+> See [OH49E_EVALUATION.md](OH49E_EVALUATION.md). Selection is not qualification.
+
 > **2026-11-04 owner decision:** use **Gateron KS-20 White**, retain the existing
 > **REF5025 / ADS7953 Range 1 (0–2.5 V)**, and copy Fluxpad V2 sensing geometry
 > and PCB thickness (upstream **1.0 mm**; saved Keyboard12 is **1.6 mm**).
@@ -133,12 +147,14 @@ for the circuit concept and required calculations/measurements.
 MAX11131 was evaluated but is not selected: the shown MAX11131AUI+T / C7457799
 listing is pre-order only, zero stock, estimated US$33.0809 each.
 
-### 3.3 Sensor — saved DRV5056A3QDBZ; selection to reconfirm
+### 3.3 Sensor — OH49E-S schematic/footprint assigned; PCB migration pending
 
-- Saved Keyboard12 specifies TI **DRV5056A3QDBZ**. The earlier retention decision
+- Owner selected **OH49E-S / C85573** after preliminary evaluation. Keyboard12's
+  schematic now uses native-pinout OH49E-S and the remapped combined footprint;
+  PCB remains legacy and assembly qualification is pending. The earlier DRV5056 retention decision
   assumed this was the physical Fluxpad sensor; that assumption is contradicted
-  by Fluxpad's sourcing fields and the reference-unit evidence. **Reconfirm the
-  sensor with the owner before implementation.** No substitution is approved.
+  by Fluxpad's sourcing fields and the reference-unit evidence. Resolve pin/pad
+  mapping and geometry before implementing the approved selection.
 - DRV5056A3 characteristics: unipolar output, nominal 0.6 V quiescent voltage; typical sensitivity is
   **30 mV/mT at 3.3 V** (50 mV/mT at 5 V), not a bipolar ±79 mT range.
   Linear output extends to approximately VCC − 0.2 V; 20 kHz bandwidth,
@@ -334,9 +350,11 @@ and extend the note map; no MCU change required.
 
 ## 9. Open items / decisions pending
 
-- **Next pre-routing task:** reconfirm the sensor with the owner, then resolve the placed sensor-footprint discrepancy
-  against Fluxpad V2, verify mapping/orientation and implement the approved
-  1.0 mm thickness through Konnect. The owner selected ADS7953 / REF5025,
+- **Next pre-routing task:** restore PCB Editor transport and review coordinated
+  net/geometry migration using the remapped OH49E-S footprint. Resolve keepout
+  coverage, assembly mapping/orientation and the approved 1.0 mm physical stackup
+  through supported tools. See `OH49E_FOOTPRINT_MIGRATION.md`.
+  The owner selected ADS7953 / REF5025,
   Range 1; full theoretical sensor coverage is not guaranteed, but actual switch
   clipping is unmeasured. Prototype range margin, acquisition, power,
   interconnect and protocol validation remain open. The owner clarified

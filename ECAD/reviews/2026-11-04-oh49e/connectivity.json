@@ -1,0 +1,147 @@
+{
+  "date": "2026-11-04",
+  "kicad_version": "10.0.6",
+  "method": "Compare native kicad-cli net endpoint sets before/after; normalize legacy sensor pins 2->3 and 3->2; ignore net names/codes for equivalence. Read-only schematic AST comparison verifies preserved wiring, placements, UUIDs, hierarchy and unrelated symbols.",
+  "equivalent_connectivity_after_pin_remap": true,
+  "net_count": 46,
+  "sensor_count": 12,
+  "preserved": [
+    "wires",
+    "labels",
+    "global_labels",
+    "junctions",
+    "no_connects",
+    "symbol_uuids",
+    "symbol_placements",
+    "hierarchy_instances",
+    "unrelated_symbols"
+  ],
+  "sensor_footprints": "intentionally unassigned pending combined footprint mapping and geometry review",
+  "sensors": [
+    {
+      "reference": "U3",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U3-VOUT)",
+      "output_peer": [
+        "R1",
+        "1"
+      ]
+    },
+    {
+      "reference": "U4",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U4-VOUT)",
+      "output_peer": [
+        "R2",
+        "1"
+      ]
+    },
+    {
+      "reference": "U5",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U5-VOUT)",
+      "output_peer": [
+        "R3",
+        "1"
+      ]
+    },
+    {
+      "reference": "U6",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U6-VOUT)",
+      "output_peer": [
+        "R4",
+        "1"
+      ]
+    },
+    {
+      "reference": "U7",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U7-VOUT)",
+      "output_peer": [
+        "R5",
+        "1"
+      ]
+    },
+    {
+      "reference": "U8",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U8-VOUT)",
+      "output_peer": [
+        "R6",
+        "1"
+      ]
+    },
+    {
+      "reference": "U9",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U9-VOUT)",
+      "output_peer": [
+        "R7",
+        "1"
+      ]
+    },
+    {
+      "reference": "U10",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U10-VOUT)",
+      "output_peer": [
+        "R8",
+        "1"
+      ]
+    },
+    {
+      "reference": "U11",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U11-VOUT)",
+      "output_peer": [
+        "R9",
+        "1"
+      ]
+    },
+    {
+      "reference": "U12",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U12-VOUT)",
+      "output_peer": [
+        "R10",
+        "1"
+      ]
+    },
+    {
+      "reference": "U13",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U13-VOUT)",
+      "output_peer": [
+        "R11",
+        "1"
+      ]
+    },
+    {
+      "reference": "U14",
+      "pin_1": "+3.3V",
+      "pin_2": "GND",
+      "pin_3": "Net-(U14-VOUT)",
+      "output_peer": [
+        "R12",
+        "1"
+      ]
+    }
+  ],
+  "sha256": {
+    "ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_sch": "0f78e8e86e760998e42cdac894d51d5a096f2865d5a8ad3a6ad56450cee4678d",
+    "ECAD/Keyboard12/Keyboard12/libraries/Keyboard12.kicad_sym": "90b50bfc01bc6318ebc422629175e630c79bc27b88bf0856ffe2e4baa8c35527",
+    "ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pcb": "8c724b1023fb863e57dbbf02b00c902ed23cfad3352fadfd202e62b15c0313a0"
+  }
+}

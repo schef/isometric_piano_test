@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-04",
+  "owner_selected_convention": {
+    "1": "VCC",
+    "2": "VOUT",
+    "3": "GND"
+  },
+  "active_symbol": "Keyboard12:OH49E-S_EasyEDA",
+  "sensor_count": 12,
+  "net_count": 46,
+  "functional_net_endpoint_sets_preserved_after_2_3_renumbering": true,
+  "physical_pad_geometry_keepout_and_graphics_unchanged": true,
+  "wires_symbol_uuids_placements_instances_and_unrelated_symbols_preserved": true,
+  "embedded_definition_counts": {
+    "Keyboard12:OH49E-S": 12,
+    "Keyboard12:OH49E-S_EasyEDA": 12
+  },
+  "duplicate_cleanup_still_pending": true,
+  "pcb_synchronized": false,
+  "sha256": {
+    "ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_sch": "8a1a83ed30d3ecd5bd263d78b6a6f33285e54868b2e3c01ed3aa360b9cc31261",
+    "ECAD/Keyboard12/Keyboard12/libraries/Fluxpad/Fluxpad.pretty/SW_Cherry_MX_PCB_1.00u_hall_effect.kicad_mod": "2586fdf7d0fb5d2eef88b384d9eed6391df74340e9f410962aa0fe933fda8922",
+    "ECAD/Keyboard12/Keyboard12/libraries/Keyboard12.kicad_sym": "83e888234e41ae1df50521eb0b03e2b528af118982c3b0032a3cbd4ce4a86e0a",
+    "ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pcb": "8c724b1023fb863e57dbbf02b00c902ed23cfad3352fadfd202e62b15c0313a0"
+  }
+}

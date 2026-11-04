@@ -3,4 +3,5 @@
 	(lib (name "footprints") (type "KiCad") (uri "${KIPRJMOD}/libraries/ADS7953SDBT/KiCADv6/footprints.pretty") (options "") (descr ""))
 	(lib (name "Tang") (type "KiCad") (uri "${KIPRJMOD}/libraries/Fluxpad/Fluxpad.pretty") (options "") (descr ""))
 	(lib (name "Keyboard12_footprints") (type "KiCad") (uri "${KIPRJMOD}/libraries/Keyboard12_footprints.pretty") (options "") (descr ""))
-)
+
+  (lib (name "Keyboard12_OH49E") (type "KiCad") (uri "${KIPRJMOD}/libraries/Fluxpad/Fluxpad.pretty") (options "") (descr "")))

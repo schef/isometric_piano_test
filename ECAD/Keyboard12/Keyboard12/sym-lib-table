@@ -2,4 +2,5 @@
 	(version 7)
 	(lib (name "2026-09-05_16-51-17") (type "KiCad") (uri "${KIPRJMOD}/libraries/ADS7953SDBT/KiCADv6/2026-09-05_16-51-17.kicad_sym") (options "") (descr ""))
 	(lib (name "Tang") (type "KiCad") (uri "${KIPRJMOD}/libraries/Fluxpad/Tang.kicad_sym") (options "") (descr ""))
-)
+
+  (lib (name "Keyboard12") (type "KiCad") (uri "${KIPRJMOD}/libraries/Keyboard12.kicad_sym") (options "") (descr "")))

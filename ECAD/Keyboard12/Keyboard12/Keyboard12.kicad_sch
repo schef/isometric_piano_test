@@ -2641,6 +2641,3198 @@
 			)
 			(embedded_fonts no)
 		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
+	
+		(symbol
+		  "Keyboard12:OH49E-S_EasyEDA"
+		  (pin_names
+		    (offset 1.016)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "U"
+		    (at 0 10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Value" "OH49E-S"
+		    (at 0 -10.1600 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "OH49E-S_EasyEDA_0_1"
+		    (rectangle
+		      (start -5.08 -7.62)
+		      (end 5.08 7.62)
+		      (stroke
+		        (width 0.254)
+		        (type default)
+		      )
+		      (fill
+		        (type background)
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 10.16 270)
+		      (length 2.54)
+		      (name "VCC"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin power_in line
+		      (at 0 -10.16 90)
+		      (length 2.54)
+		      (name "GND"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "3"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin output line
+		      (at 7.62 0 180)
+		      (length 2.54)
+		      (name "VOUT"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
 	)
 	(junction
 		(at 29.21 43.18)
@@ -7191,7 +10383,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 29.21 148.59 0)
 		(unit 1)
 		(body_style 1)
@@ -7202,7 +10394,7 @@
 		(dnp no)
 		(uuid "0a7a6590-3445-4f4b-aab7-f0590346788c")
 		(property "Reference" "U11"
-			(at 28.194 148.844 0)
+			(at 21.59 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7212,8 +10404,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 54.102 138.938 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 63.5 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7223,7 +10415,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 60.96 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -7234,7 +10426,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 34.29 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -7245,7 +10437,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 29.21 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -7284,7 +10476,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 29.21 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 29.21 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 29.21 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 29.21 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 29.21 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 29.21 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 29.21 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 78.74 44.45 0)
@@ -7605,7 +10860,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 78.74 148.59 0)
 		(unit 1)
 		(body_style 1)
@@ -7616,7 +10871,7 @@
 		(dnp no)
 		(uuid "24b66bf1-2e5e-4640-a47a-afd768b79b9e")
 		(property "Reference" "U12"
-			(at 77.724 148.844 0)
+			(at 71.12 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7626,8 +10881,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 103.632 138.938 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 113.03 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7637,7 +10892,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 110.49 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -7648,7 +10903,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 83.82 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -7659,7 +10914,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 78.74 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -7698,7 +10953,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 78.74 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 78.74 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 78.74 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 78.74 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 78.74 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 78.74 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 78.74 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:+3.3V")
 		(at 29.21 135.89 0)
@@ -9450,7 +12768,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 29.21 110.49 0)
 		(unit 1)
 		(body_style 1)
@@ -9461,7 +12779,7 @@
 		(dnp no)
 		(uuid "62a25629-124e-49b0-babb-c0815078aead")
 		(property "Reference" "U8"
-			(at 28.194 110.744 0)
+			(at 21.59 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9471,8 +12789,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 54.102 100.838 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 63.5 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9482,7 +12800,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 60.96 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -9493,7 +12811,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 34.29 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -9504,7 +12822,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 29.21 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9543,7 +12861,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 29.21 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 29.21 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 29.21 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 29.21 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 29.21 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 29.21 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 29.21 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 45.72 31.75 90)
@@ -10673,7 +14054,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 78.74 31.75 0)
 		(unit 1)
 		(body_style 1)
@@ -10684,7 +14065,7 @@
 		(dnp no)
 		(uuid "7ded9a74-3981-4cdb-b891-919d22aae7d3")
 		(property "Reference" "U4"
-			(at 77.724 32.004 0)
+			(at 71.12 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10694,8 +14075,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 103.632 22.098 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 113.03 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10705,7 +14086,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 110.49 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -10716,7 +14097,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 83.82 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -10727,7 +14108,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 78.74 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -10766,7 +14147,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 78.74 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 78.74 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 78.74 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 78.74 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 78.74 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 78.74 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 78.74 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 16.51 148.59 0)
@@ -11086,7 +14530,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 128.27 148.59 0)
 		(unit 1)
 		(body_style 1)
@@ -11097,7 +14541,7 @@
 		(dnp no)
 		(uuid "851d867f-cebd-4768-99c0-170b0607ff2e")
 		(property "Reference" "U13"
-			(at 127.254 148.844 0)
+			(at 120.65 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11107,8 +14551,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 153.162 138.938 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 162.56 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11118,7 +14562,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 160.02 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -11129,7 +14573,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 133.35 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -11140,7 +14584,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 128.27 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -11179,9 +14623,72 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 128.27 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 128.27 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 128.27 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 128.27 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 128.27 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 128.27 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 128.27 148.59 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 29.21 71.12 0)
 		(unit 1)
 		(body_style 1)
@@ -11192,7 +14699,7 @@
 		(dnp no)
 		(uuid "8768360d-38ff-4a64-9a29-715617698dd9")
 		(property "Reference" "U5"
-			(at 28.194 71.374 0)
+			(at 21.59 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11202,8 +14709,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 54.102 61.468 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 63.5 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11213,7 +14720,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 60.96 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -11224,7 +14731,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 34.29 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -11235,7 +14742,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 29.21 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -11274,7 +14781,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 29.21 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 29.21 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 29.21 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 29.21 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 29.21 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 29.21 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 29.21 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 194.31 151.13 180)
@@ -11912,7 +15482,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 29.21 31.75 0)
 		(unit 1)
 		(body_style 1)
@@ -11923,7 +15493,7 @@
 		(dnp no)
 		(uuid "9ced74bb-faef-4709-8aff-b8f9a81eaa03")
 		(property "Reference" "U3"
-			(at 28.194 32.004 0)
+			(at 21.59 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11933,8 +15503,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 54.102 22.098 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 63.5 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11944,7 +15514,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 60.96 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -11955,7 +15525,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 34.29 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -11966,7 +15536,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 29.21 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -12005,7 +15575,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 29.21 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 29.21 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 29.21 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 29.21 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 29.21 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 29.21 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 29.21 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 29.21 123.19 0)
@@ -13774,7 +17407,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 128.27 31.75 0)
 		(unit 1)
 		(body_style 1)
@@ -13785,7 +17418,7 @@
 		(dnp no)
 		(uuid "d5b2984c-8b45-4e62-a18b-4c24a8c0ac30")
 		(property "Reference" "U14"
-			(at 127.254 32.004 0)
+			(at 120.65 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13795,8 +17428,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 153.162 22.098 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 162.56 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13806,7 +17439,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 160.02 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -13817,7 +17450,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 133.35 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -13828,7 +17461,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 128.27 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -13867,7 +17500,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 128.27 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 128.27 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 128.27 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 128.27 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 128.27 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 128.27 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 128.27 31.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 29.21 83.82 0)
@@ -13947,7 +17643,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 78.74 71.12 0)
 		(unit 1)
 		(body_style 1)
@@ -13958,7 +17654,7 @@
 		(dnp no)
 		(uuid "d9e9ae30-7043-4823-974c-727d4a0f9390")
 		(property "Reference" "U6"
-			(at 77.724 71.374 0)
+			(at 71.12 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13968,8 +17664,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 103.632 61.468 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 113.03 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13979,7 +17675,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 110.49 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -13990,7 +17686,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 83.82 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -14001,7 +17697,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 78.74 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -14040,7 +17736,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 78.74 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 78.74 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 78.74 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 78.74 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 78.74 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 78.74 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 78.74 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Open")
 		(at 196.85 107.95 0)
@@ -14582,7 +18341,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 78.74 110.49 0)
 		(unit 1)
 		(body_style 1)
@@ -14593,7 +18352,7 @@
 		(dnp no)
 		(uuid "e9f27e9d-6de0-4424-8ade-189389e58749")
 		(property "Reference" "U9"
-			(at 77.724 110.744 0)
+			(at 71.12 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14603,8 +18362,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 103.632 100.838 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 113.03 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14614,7 +18373,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 110.49 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -14625,7 +18384,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 83.82 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -14636,7 +18395,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 78.74 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -14675,7 +18434,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 78.74 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 78.74 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 78.74 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 78.74 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 78.74 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 78.74 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 78.74 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Connector:Conn_01x10_Pin")
 		(at 168.91 129.54 0)
@@ -15181,7 +19003,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 128.27 71.12 0)
 		(unit 1)
 		(body_style 1)
@@ -15192,7 +19014,7 @@
 		(dnp no)
 		(uuid "f837f6ad-f78f-4087-b41c-9fb9f89666ec")
 		(property "Reference" "U7"
-			(at 127.254 71.374 0)
+			(at 120.65 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15202,8 +19024,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 153.162 61.468 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 162.56 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15213,7 +19035,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 160.02 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -15224,7 +19046,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 133.35 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -15235,7 +19057,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 128.27 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -15274,7 +19096,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 128.27 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 128.27 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 128.27 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 128.27 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 128.27 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 128.27 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 128.27 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 16.51 110.49 0)
@@ -15436,7 +19321,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Tang:DRV5056A3QDBZx Lekker")
+		(lib_id "Keyboard12:OH49E-S_EasyEDA")
 		(at 128.27 110.49 0)
 		(unit 1)
 		(body_style 1)
@@ -15447,7 +19332,7 @@
 		(dnp no)
 		(uuid "fe0bd5d8-9361-4a0c-b49a-65b0745292a2")
 		(property "Reference" "U10"
-			(at 127.254 110.744 0)
+			(at 120.65 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15457,8 +19342,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DRV5056A3QDBZx Lekker"
-			(at 153.162 100.838 0)
+		(property "Value" "OH49E-S / Gateron KS-20 White"
+			(at 162.56 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15468,7 +19353,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Tang:SW_Cherry_MX_PCB_1.00u_hall_effect"
+		(property "Footprint" "Keyboard12_OH49E:SW_Cherry_MX_PCB_1.00u_hall_effect"
 			(at 160.02 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -15479,7 +19364,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/drv5056.pdf?ts=1675710704112&ref_url=https%253A%252F%252Fwww.ti.com%252Fsitesearch%252Fen-us%252Fdocs%252Funiversalsearch.tsp%253FlangPref%253Den-US%2526searchTerm%253DDRV5056A3QDBZT%2526nr%253D3"
+		(property "Datasheet" "https://ohhallsensor.com/wp-content/uploads/2020/08/OH49E-OH49E-S-Hall-effect-linear-IC.pdf"
 			(at 133.35 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -15490,7 +19375,7 @@
 				)
 			)
 		)
-		(property "Description" "50 mV/mT,+79-mT, 20-kHz, 3.3/5V, SOT-23"
+		(property "Description" "Bipolar linear Hall sensor, SOT-23; EasyEDA pad convention 1=VCC, 2=VOUT, 3=GND; KS-20 White key assembly"
 			(at 128.27 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -15529,7 +19414,70 @@
 				)
 			)
 		)
-	)
+	
+		(property "Switch Datasheet" "https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf"
+			(at 128.27 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Manufacturer" "Gateron"
+			(at 128.27 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Switch Model" "KS-20 White"
+			(at 128.27 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint Status" "Assigned combined footprint uses EasyEDA numbering; physical Fluxpad geometry unchanged. PCB/assembly/stackup validation pending."
+			(at 128.27 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nanjing Ouzhuo Tech"
+			(at 128.27 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "OH49E-S"
+			(at 128.27 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pin Numbering" "Owner-selected EasyEDA convention: 1=VCC, 2=VOUT, 3=GND. Manufacturer PDF labels OUT/GND as 3/2; physical lead roles unchanged."
+			(at 128.27 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 128.27 161.29 0)

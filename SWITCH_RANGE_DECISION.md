@@ -1,5 +1,10 @@
 # Switch, geometry and ADC-range decision — 2026-11-04
 
+> **Subsequent owner approval:** select OH49E-S / C85573 for the main board,
+> superseding the earlier DRV5056 retention and pending-reconfirmation text below.
+> KS-20 White, 1.0 mm and ADS7953 / REF5025 Range 1 remain selected.
+> See `OH49E_EVALUATION.md`; no KiCad changes or prototype qualification claimed.
+
 ## Owner-approved direction
 
 **Later finding on the same date:** Fluxpad's sourcing fields and assembly
