@@ -3,9 +3,8 @@
 > **2026-11-04 owner decision:** use **Gateron KS-20 White**, retain the existing
 > **REF5025 / ADS7953 Range 1 (0–2.5 V)**, and copy Fluxpad V2 sensing geometry
 > and PCB thickness (upstream **1.0 mm**; saved Keyboard12 is **1.6 mm**).
-> See [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md). This supersedes older
-> Lekker selections, costs and pending-range statements in this specification;
-> prototype validation and other electrical/mechanical reviews remain open.
+> See [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md). Prototype validation
+> and other electrical/mechanical reviews remain open; no KiCad changes applied.
 
 Current switch reference: [Gateron KS-20 White engineering specification (PDF)](https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf),
 part KS-20TF10B045NW-X72; see page 5 for the mechanical cross-section and magnetic
@@ -31,22 +30,23 @@ the three-key example is reference firmware, not an implementation of this board
   carrier board and plugs in the Pico 2 module (with 5 carrier PCBs as spares).
 
 This is **Design B** (the winner) because it scales well beyond 60 keys (add
-boards + CS lines), keeps velocity timing fine via per-board parallel ADC reads,
-and is noise-robust over distance compared to the analog-MUX alternative.
+boards + CS lines) and digitizes locally instead of carrying analog signals
+between boards. Reads share one SPI bus; timing and cable integrity remain to
+be validated, not assumed from the architecture.
 
 ## 2. Why this design (decision rationale)
 
 | Criterion                | Design A (analog MUX)       | Design B (SPI ADC/board)  |
 |--------------------------|-----------------------------|----------------------------|
 | Max keys                 | ~64 (Pico 4-ADC wall)       | many (add boards + CS)    |
-| Full 60-key sweep        | ~1.2 ms serial (coarse)     | ~100–300 µs parallel      |
-| Velocity timing granularity | coarser / hacky          | fine, preserved           |
+| Full 60-key sweep        | Historical estimate: ~1.2 ms | Target: ≤250 µs on shared SPI; unvalidated |
+| Velocity timing granularity | Depends on scan schedule | Provisional 4 kHz/key target; unvalidated |
 | Scalability              | Poor                        | Good                       |
 | Distance/noise immunity  | Poor (analog over wire)     | Good (digital at source)  |
 
-The Pico has 4 ADC pins; an analog design wall-caps around 64 keys and degrades
-velocity timing when many keys are scanned serially. The SPI design converts to
-digital at each board, so it scales and stays fast. **This wins.**
+The earlier analog-MUX comparison was a design estimate, not a measured limit
+or a universal 64-key cap. The selected SPI design digitizes at each board;
+the actual scan schedule and interconnect still require validation.
 
 ## 3. Key board (JLC-assembled, qty 5)
 
@@ -64,34 +64,40 @@ SPI: SCLK, MOSI(SDI), MISO(SDO), CS#n          → shared bus to master
 
 ### 3.2 ADC selection (THE WINNER PART)
 
-- ADC family retained pending input-range decision: **ADS7953**, 12-bit,
+- Owner-selected ADC family: **ADS7953**, 12-bit,
    **16-channel**, 1-MSPS, single-ended SPI, 38-pin TSSOP.
    **Updated sourcing choice: ADS7953SDBTR / JLCPCB C701670.** TI confirms it is
    the same device/package/pinout as ADS7953SDBT, supplied in tape-and-reel rather
    than tubes. The current KiCad fields still say ADS7953SDBT / C701092 and have
    not been edited. Validate the existing footprint and update fields through
-   Konnect only after the electrical choice is approved.
+   Konnect after verifying identities and approval for the field updates.
    - Its **current schematic** external reference is **REF5025AIDR** (SOIC-8,
      recorded JLC/LCSC **C11341**, exact sourcing still to verify), producing
-     2.5 V. This reference/range combination is under review, not electrically
-     approved. Follow SLAS605C: place a 10 uF ceramic directly between
+      2.5 V. The owner selected this reference with Range 1 (0–2.5 V);
+      prototype range margin and settling remain unvalidated. Follow SLAS605C:
+      place a 10 uF ceramic directly between
     ADS7953 REFP and REFM, short MXO to AINP for the unbuffered path, and tie
     AINM to the analog-ground plane.
   - Use channels 0–11 for the 12 keys. Exclude channels 12–15 from the
     sequencer; tie them to ground if the final configuration requires them to
     be connected.
   - The 38-pin TSSOP is preferred over VQFN for visual inspection and rework.
-  - 20 MHz serial interface; 1 MSPS aggregate. A 12-key board requires only
-    12 × 4 kHz = **48 kSPS**, while a 12-channel sweep permits ~83 kSPS per
-    key: more than 20× the required per-key scan rate.
+   - 20 MHz serial interface; up to 1 MSPS per ADC under specified conditions.
+     Each 12-key board requires **48 kSPS** at 4 kHz/key. The headline ADC rate
+     does not establish available per-key throughput on the shared bus.
   - Five boards require approximately 3.84 Mbit/s of 16-bit SPI transfers at
-    a 4 kHz scan rate, well below the 20 MHz serial-interface limit.
+     a 4 kHz scan rate, before pipeline/CS/acquisition and other overhead.
+     Eightfold averaging requires at least 30.72 Mbit/s and does not fit a
+     single 20 MHz shared bus; see `HANDOVER.md` for the system budget.
    - Owner-provided JLCPCB screenshot on 2026-11-02 shows C701670 with **13 in
      stock at US$8.5952 each (1+ tier)**, Extended. Six for five boards plus a
      spare would be approximately US$51.57 at that tier. Recheck stock, quantity
      pricing and assembly eligibility before ordering; no stock is reserved.
 
-#### Reference/range alternatives — no hardware change applied
+#### Historical reference/range alternatives — not selected
+
+The current selection is the existing 2.5 V reference / Range 1 without
+attenuation. The alternatives below are retained for context, not as open choices.
 
 See [SCHEMATIC_REVIEW.md](SCHEMATIC_REVIEW.md) for datasheet evidence and tests.
 
@@ -110,8 +116,8 @@ not a measured switch output. A 3.0 V measuring range might lose approximately
 two-threshold piano-velocity method, clipping can be acceptable outside the two
 timing thresholds and release region. First measure the actual selected
 switch/sensor geometry over travel, multiple units and representative operating
-conditions, including dynamic response after the RC filter. Then decide whether
-3.0 V (or even 2.5 V) covers the useful crossings with sufficient margin.
+conditions, including dynamic response after the RC filter. Validate that the
+selected 2.5 V range covers the useful crossings with sufficient margin.
 Reference dropout/startup/noise and supply tolerances remain design checks.
 The attenuation option reduces sensor voltage before it reaches the ADC, rather
 than changing sensor power or relying on clipping. For example only, a 0.70
@@ -127,15 +133,18 @@ listing is pre-order only, zero stock, estimated US$33.0809 each.
 - Use the same TI **DRV5056A3QDBZ** linear, ratiometric, unipolar Hall-effect
   sensor as the existing Fluxpad design. This avoids qualifying a new sensor
   for the key mechanism.
-- 50 mV/mT sensitivity, ±79 mT range, 20 kHz bandwidth, 3.3 V operation,
-  SOT-23 package.
+- Unipolar output, nominal 0.6 V quiescent voltage; typical sensitivity is
+  **30 mV/mT at 3.3 V** (50 mV/mT at 5 V), not a bipolar ±79 mT range.
+  Linear output extends to approximately VCC − 0.2 V; 20 kHz bandwidth,
+  SOT-23 package. See `SCHEMATIC_REVIEW.md` for datasheet references.
 - One per key: 3 pins (VCC, GND, VOUT) → VOUT directly to an ADC channel.
 - Reuse Fluxpad's `Tang:SW_Cherry_MX_PCB_1.00u_hall_effect` footprint and its
   sensor placement relative to the Cherry-MX-style key. The Fluxpad schematic
   identifies the JLC/LCSC part as **C85573**; confirm current availability
   before placing the assembly order.
 - Small neodymium magnet on each key stem; sensor fixed under the key.
-- Wiring short (on-board), so no buffering needed.
+- Wiring is short and on-board; an unbuffered path is intended, but ADC
+  acquisition settling and sensor/filter loading still need validation.
 
 ### 3.4 Per-key analog circuit (four parts)
 
@@ -157,23 +166,28 @@ with the completed 12-key prototype before finalizing its values.
 
 ### 3.5 Key mechanism
 
-- Use **Wooting Lekker V2 L60 Linear** Hall-effect switches for all 60 analog
-  keys. Their 60 g springs provide the deliberately firm resistance selected
-  for this musical controller and retain Cherry-MX-compatible stems.
+- Use **Gateron KS-20 White** magnetic switches for all 60 analog keys,
+  with Cherry-MX-compatible stems. Follow the official engineering specification
+  and reproduce Fluxpad V2 local sensor geometry with a **1.0 mm PCB**; the
+  saved Keyboard12 PCB is still 1.6 mm and its placed sensor geometry differs.
 - Use **DSA-profile, Cherry-MX-stem keycaps**. The Fluxpad source includes the
   reference CAD model at `../fluxpad/CAD/DSA_Keycap_CherryMX.step`.
-- Magnet glued to the stem; DRV5056A3QDBZ sensor directly beneath.
+- Use the switch's built-in magnet; verify its alignment, polarity and clearance
+  against the DRV5056A3QDBZ and the physical Fluxpad reference.
 - Fluxpad's Gateron Red switches and Kailh MX hot-swap sockets are for its
   separate digital keys and are not part of this all-analog keyboard design.
 
-### 3.5 Interconnect / connectors
+### 3.6 Interconnect / connectors
 
 - Each board needs 2 inter-board connectors (daisy-chain in/out) OR 1 (star) —
   see section 6. Signals per board:
   - VCC (3.3 V), GND
   - SPI: SCLK, MOSI, MISO (shared)
   - CS#n (unique per board)
-- Recommend a small IDC / JST ribbon connector (8-conductor) per board.
+- The saved schematic uses 10 conductors: 3.3 V, GND, SCLK, MOSI, MISO and
+  CS0–CS4. J1/J2 are custom SMD chain connectors; J3/J4 are alternative 1×10
+  headers. Final connector type, population, current rating and cable layout
+  remain open; an eight-conductor shared-chain recommendation is obsolete.
 
 ## 4. Master carrier board (hand-assembled by user, qty 1 used)
 
@@ -198,11 +212,15 @@ the key boards, calibration, SPI scan timing, and mechanical layout are proven.
 
 ### 4.2 Pico 2 pin map
 
+**Proposed hardware SPI0 mapping, not implemented or validated on a carrier.**
+The earlier GPIO0=SCLK / GPIO1=MOSI / GPIO2=MISO assignment was incorrect.
+Verify this proposal against the Pico 2 / RP2350 datasheets before schematic use.
+
 | Pico 2 GPIO | Function |
 |------------|----------|
-| GPIO0      | SCLK (SPI0)   |
-| GPIO1      | MOSI (SPI0)   |
-| GPIO2      | MISO (SPI0)   |
+| GPIO0      | MISO / RX (SPI0) |
+| GPIO1      | MOSI / TX (SPI0) |
+| GPIO2      | SCLK (SPI0)   |
 | GPIO3      | CS0 → board 0 |
 | GPIO4      | CS1 → board 1 |
 | GPIO5      | CS2 → board 2 |
@@ -220,9 +238,11 @@ TinyUSB CDC-serial + USB-MIDI (as in the existing `main.c`).
 - A dedicated 3.3 V regulator for the key boards. Do **not** power all 60
   sensors and five ADCs from the Pico 2's 3.3 V regulator. A standard
   Raspberry Pi Pico's `3V3_OUT` is limited to about 300 mA, below the estimated
-  ≈0.4 A worst-case key-board load. Feed the key boards from a carrier-mounted
+  sensor load alone: **360 mA typical / 600 mA maximum** for 60 sensors,
+  before ADCs, references, master and losses. Feed the key boards from a carrier-mounted
   5 V-to-3.3 V regulator rated for **at least 1 A**, with a shared ground to
-  the Pico 2.
+  the Pico 2. A 1 A regulator rating alone does not validate the USB input-current
+  budget; check the source/current contract, efficiency, cable drop and startup.
 - On the carrier USB-C circuit, include 5.1 kΩ pull-down resistors from CC1
   and CC2 to ground, USB ESD protection at the receptacle, and short parallel
   D+/D− traces over a continuous ground plane. Connect USB 5 V to the Pico
@@ -235,7 +255,7 @@ TinyUSB CDC-serial + USB-MIDI (as in the existing `main.c`).
 
 ## 5. Note map
 
-5 octaves, chromatic, **C1–B5 (MIDI 36–95)** — semitone step per key across the
+5 octaves, chromatic, **MIDI 36–95** (C2–B6 using middle C = C4) — semitone step per key across the
 60 keys (board n channel i → note `36 + n*12 + i`).
 
 ## 6. Board-to-board wiring: daisy-chain vs star
@@ -243,8 +263,10 @@ TinyUSB CDC-serial + USB-MIDI (as in the existing `main.c`).
 - **Daisy-chain (recommended):** each key board has 2 connectors (in/out);
   the shared SPI lines and VCC/GND run board→board→→master. Fewest cables.
 - **Star:** all 5 boards each wire directly to the master.
-- Either is electrically equivalent (SPI is a shared bus; CS#n is unique per
-  board). Daisy-chain is preferred for a row of keys.
+- Both use a shared SPI bus with unique CS#n, but are **not signal-integrity
+  equivalents**. Validate cable length, stubs, ground returns, current capacity
+  and MISO handoff before finalizing the topology. A shared chain carries all
+  five CS lines, with exactly one local selection jumper bridged per board.
 
 ## 7. Firmware requirements (for the implementing agent)
 
@@ -258,7 +280,8 @@ and scan scheduling for the main controller:
     SPI, read back the 12-bit channel value.
   - Sequence / interleave reads across the 5 boards to keep per-key timing tight.
 - `midi_notes[]` → 60-entry chromatic `{36..95}`.
-- Two-threshold timing + square-root velocity curve: **unchanged**.
+- Retain the two-threshold timing and square-root velocity-curve approach;
+  thresholds and timing constants require validation/calibration for this hardware.
 - MUX/hardware init → SPI controller init in `main()`.
 - Add a **per-key calibration pass** (samples resting + bottom of travel per key,
   stores offsets in flash) to normalize key-to-key response across the 60 keys.
@@ -266,9 +289,14 @@ and scan scheduling for the main controller:
 ### 7.1 ADS7953 SPI protocol notes
 
 - SPI mode / command framing per ADS79xx datasheet (SLAS605C).
-- 12-bit SAR, zero latency; word size includes leading zeros + channel address.
-- Use the ADC's **sequencer / auto-scan** to sweep the 12 channels of a board in
-  one CS assertion for efficiency.
+- Each conversion frame begins with a **CS falling edge** and uses 16 clocks;
+  result words include the channel address and 12-bit conversion value.
+- Channel selection is pipelined relative to command frames. “Zero latency”
+  does not mean a new channel command returns its result immediately.
+- Use sequencer / auto-scan only with the documented per-frame CS timing, not
+  one continuously asserted CS for a 12-channel sweep. Account for the 325 ns
+  acquisition requirement, maximum 1 MSPS, pipeline/boundary frames and bus
+  handoff in the five-board schedule. The final transaction table is outstanding.
 
 ## 8. Cost estimate (JLC-assembled key boards + hand-soldered master)
 
@@ -277,8 +305,7 @@ and scan scheduling for the main controller:
 | Raspberry Pi Pico 2 module (master) | 1 | TBD | TBD |
 | ADS7953SDBTR ADC (C701670), screenshot price 2026-11-02 | 6 | $8.5952 | $51.57 |
 | DRV5056A3QDBZ Hall sensor      | 60  | TBD      | TBD     |
-| Neodymium magnets              | 60  | $0.05   | $3.00   |
-| Wooting Lekker V2 L60 Linear switch | 60 | €29.99 / 70-pack | €29.99 |
+| Gateron KS-20 White switch (built-in magnet) | 60 | TBD | TBD |
 | USB-C + MCU support (master)   | 1   | $3.50   | $3.50   |
 | Passives / conns (all boards)  | batch | —     | ~$12.00 |
 | Key PCBs ×5 (JLC)              | panels | —    | $10–25  |
@@ -291,30 +318,29 @@ and extend the note map; no MCU change required.
 
 ## 9. Open items / decisions pending
 
-- **Pre-routing blocker (owner clarification):** independently inspect the
-  ADS7953 reference-voltage circuitry and sensor-input compatibility in the actual
-  schematic. A previous AI raised a concern; it is not yet a confirmed defect.
-  ADC and other component choices may change to fix errors. A replacement ADC
-  must have 12 or 16 channels and adequate throughput for the master to scan five
-  sensor boards. The owner clarified **six boards total: five populated 12-key
+- **Next pre-routing task:** resolve the placed sensor-footprint discrepancy
+  against Fluxpad V2, verify mapping/orientation and implement the approved
+  1.0 mm thickness through Konnect. The owner selected ADS7953 / REF5025,
+  Range 1; full theoretical sensor coverage is not guaranteed, but actual switch
+  clipping is unmeasured. Prototype range margin, acquisition, power,
+  interconnect and protocol validation remain open. The owner clarified
+  **six boards total: five populated 12-key
   sensor boards plus one Pico 2 master carrier**, for 60 keys. Five chip-select
   lines suffice; the master itself needs no CS and there is no sixth-sensor-board
   expansion requirement. The sixth ADC in the cost table is a spare, not another
   populated board.
   See `HANDOVER.md` for provisional 4 kHz/key throughput and averaging constraints.
 - Reconfirm **ADS7953SDBTR / C701670** stock, quantity-specific price and assembly
-  eligibility in JLCPCB's BOM tool immediately before ordering. The reference/
-  range alternative is not selected; measure real sensor travel/output before
-  deciding whether a near-3.0 V reference suffices for velocity sensing or a
-  2.0 V reference/0–4.0 V range with added analog rail is preferable.
+  eligibility in JLCPCB's BOM tool immediately before ordering. Validate real
+  KS-20 sensor travel/output and useful threshold margin within the selected
+  0–2.5 V range across representative units and operating conditions.
 - Verify the Pico 2 footprint, underside USB-test-pad routing, and USB-C
   connector mechanical clearance before laying out the master carrier board.
 - Confirm DRV5056A3QDBZ / LCSC C85573 availability and current pricing before
   ordering; it replaces the previously proposed SS49E.
-- Confirm Wooting Lekker V2 L60 availability, pricing, and magnet dimensions
-  before ordering; the current quoted price is €29.99 per 70-pack, which covers
-  the 60 switches required. Validate the final magnet-to-sensor travel during
-  calibration.
+- Confirm KS-20 White exact variant, availability and pricing before ordering;
+  no current switch cost is established. Validate the complete mechanical stack
+  and final magnet-to-sensor travel against the official specification and reference.
 - Confirm daisy-chain connector type (IDC vs JST) once board-to-board distance
   and physical layout is fixed.
 

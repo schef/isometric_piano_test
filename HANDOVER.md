@@ -8,7 +8,7 @@ The upstream board specifies **1.0 mm**, confirmed by the owner's physical
 measurement, not Keyboard12's saved **1.6 mm**. See
 [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md) for measurements, the
 footprint discrepancy and remaining validation. This supersedes the older
-Lekker selection and pending-range discussion below. No KiCad changes applied.
+Lekker selection and pending-range discussion. No KiCad changes applied.
 
 Switch reference: [official KS-20 White engineering specification (PDF)](https://www.gateron.com/u_file/2311/10/file/GATERONMagneticWhiteSwitch-KS-20TF10B045NW-X72.pdf),
 especially page 5 for the cross-section, polarity and mechanical dimensions.
@@ -21,6 +21,9 @@ readiness. The Fluxpad firmware in `examples/fluxpad_midi/` is reference materia
 only; building or flashing it is not part of this handover.
 
 ## Where to start
+
+Read [TODO.md](TODO.md) for the current cross-session checklist and update it
+as work is verified. The next task is the placed sensor-footprint comparison.
 
 Open **`ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pro`** in KiCad.
 
@@ -43,7 +46,7 @@ was not found in the inspected `ECAD/` inventory; confirm its status with the ow
 
 - Five identical 12-key boards, each with 12 DRV5056A3QDBZ Hall sensors and an
   ADS7953SDBT SPI ADC; no MCU on the key boards.
-- Wooting Lekker V2 L60 switches and DSA-profile, MX-stem keycaps.
+- Gateron KS-20 White switches and DSA-profile, MX-stem keycaps.
 - A Pico 2 master carrier, USB-C connection, and dedicated 3.3 V sensor-board supply.
 - Shared SPI data/clock lines and a separate chip-select for each board.
 - JLCPCB assembly for key boards; hand assembly for the master carrier.
@@ -64,43 +67,39 @@ reference generator's 3.3 V input is not itself the identified problem. The revi
 also records a higher sensor worst-case current. The earlier missing-sixth-CS
 finding is withdrawn: the owner clarified six boards total means five sensor
 boards plus the Pico 2 master, requiring only five CS lines.
-No electrical changes have been applied; resolve these before routing.
+The owner has since selected 2.5 V / Range 1; this is a design decision, not
+prototype qualification. No electrical changes have been applied. Resolve the
+remaining geometry, power, interconnect and protocol checks before routing.
 
-**Sourcing/options update:** if retaining ADS7953, the documented sourcing choice
+**Sourcing/options update:** for the retained ADS7953, the documented sourcing choice
 is **ADS7953SDBTR / C701670**, the tape-and-reel equivalent of ADS7953SDBT with
 the same package/pinout. Owner screenshot shows 13 stocked at US$8.5952 each;
-recheck before ordering. Saved KiCad fields are unchanged. Reference options
-include 2.0 V / Range 2 (0–4.0 V, requires an additional analog supply rail and
-connector changes) and near-3.0 V / Range 1 (keeps the 3.3 V interconnect but may
-clip the upper approximately 0.1 V at nominal sensor limits). Measure actual
-sensor output versus key travel and dynamic velocity/release crossings before
-deciding whether 3.0 V, or even the present 2.5 V range, is adequate. See
-`SCHEMATIC_REVIEW.md` for tolerance/headroom constraints and the measurement plan.
-Another option is **attenuating each Hall output into the existing 0–2.5 V ADC
-range** using a voltage divider (and a buffer only if required). This retains
-the existing ADC/reference and single 3.3 V rail, but adds per-key components,
-requires joint divider/RC-filter design and sensor-load/ADC-settling checks,
-and changes the calibrated thresholds. No component values are selected.
+recheck before ordering. Saved KiCad fields are unchanged. The owner selected
+the existing REF5025 / Range 1, with no additional analog rail or per-key
+attenuation. Earlier alternatives remain recorded in `SCHEMATIC_REVIEW.md` as
+historical options, not pending selections. Validate actual sensor output versus
+travel, range margin and dynamic velocity/release crossings on the selected
+KS-20 / Fluxpad geometry; the preliminary one-key measurement does not qualify
+worst-case coverage.
 
 ### Owner's current state and blocking concern
 
 - Work stopped **just before routing** after a previous AI raised a possible
-  ADS7953SDBT reference-voltage issue. The concern has not been independently
-  verified; do not assume the ADC is either faulty or suitable without review.
-- **Inspect this concern before routing.** Compare the actual schematic with the
-  ADC datasheet: reference source and voltage, reference supply/headroom, input
-  range selection versus Hall-sensor output range, analog/digital supplies,
-  grounding, decoupling, and required ADC input-path connections.
-- The ADC may be replaced. The functional requirement is **12 or 16 analog
-  channels per board**, readable by the master, with sufficient system throughput
-  for **five sensor boards**. Other component choices may also change to correct errors.
+  ADS7953SDBT reference-voltage issue. Initial review established an input-range
+  limitation, not failed REF5025 supply headroom; actual switch clipping is unmeasured.
+- **Current selection:** retain ADS7953 / REF5025, Range 1. Schematic-level
+  findings are in `SCHEMATIC_REVIEW.md`; physical decoupling, grounding, input
+  settling, range margin and system timing still require validation.
+- The functional requirement remains **12 or 16 analog channels per board**,
+  readable by the master, with sufficient system throughput for **five sensor
+  boards**. No ADC replacement is selected.
 - The owner confirmed **60 keys for now: five populated 12-key boards**.
   The sixth board is the Pico 2 master carrier, not an additional sensor board.
   Five chip-select lines suffice; there is no sixth-sensor-board expansion
   requirement. Keep the current 60-key mechanical scope and MIDI map.
-- Next milestone: review and resolve the electrical blocker, then finish the
-  12-key board's placement/routing and readiness checks. Firmware development is
-  not the immediate task.
+- Next milestone: resolve the placed sensor-footprint discrepancy, apply approved
+  geometry/thickness changes through Konnect, and complete remaining electrical
+  checks before routing. Firmware development is not the immediate task.
 
 ### Switch-reading speed requirement
 

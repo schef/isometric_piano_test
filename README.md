@@ -3,8 +3,7 @@
 > **Current hardware decision (2026-11-04):** Gateron KS-20 White switches,
 > existing 2.5 V ADC reference / Range 1, and Fluxpad V2 sensing geometry and
 > PCB thickness. See [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md).
-> This supersedes older switch/range statements below; no KiCad change or
-> fabrication approval has been made.
+> No KiCad change or fabrication approval has been made.
 
 The main project is the **PCB design** for a modular, velocity-sensitive USB MIDI keyboard using
 Hall-effect switches. The goal is **60 keys, built from five identical 12-key
@@ -15,7 +14,7 @@ The original three-key Fluxpad V2 experiment is preserved as
 
 ## Main controller architecture
 
-- **Keys:** Wooting Lekker V2 L60 Linear switches with DSA-profile keycaps.
+- **Keys:** Gateron KS-20 White magnetic switches with DSA-profile keycaps.
 - **Sensing:** one TI DRV5056A3QDBZ Hall sensor per key.
 - **Key boards:** 12 sensors and one ADS7953 SPI ADC per board; no local MCU.
 - **Master:** Raspberry Pi Pico 2 on a carrier with USB-C and a dedicated
@@ -35,11 +34,13 @@ not a claim that the hardware or SPI implementation has been validated.
 **Start the hardware handover with [HANDOVER.md](HANDOVER.md).** The current KiCad
 project is `ECAD/Keyboard12/Keyboard12/Keyboard12.kicad_pro`.
 
-**Current blocker:** review confirmed that the current ADS7953 reference/range
-does not cover the sensor's full possible output; actual switch clipping is
-unmeasured. Measure useful travel/velocity thresholds and resolve the range
-choice before routing (see [SCHEMATIC_REVIEW.md](SCHEMATIC_REVIEW.md));
-the ADC and other components may change if needed. The system has **six boards
+**Current next task:** compare the placed Keyboard12 sensor geometry with Fluxpad
+V2, resolve the footprint discrepancy, and apply the approved 1.0 mm PCB thickness
+through Konnect. The owner selected ADS7953 / REF5025, Range 1 (0–2.5 V);
+prototype range margin, ADC settling and other electrical/mechanical checks remain
+open (see [TODO.md](TODO.md) and [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md)).
+The sensor's full theoretical output exceeds this ADC range, but actual switch
+clipping has not been measured. The system has **six boards
 total: five populated 12-key sensor boards plus one Pico 2 master carrier**.
 Only the five sensor ADCs need chip-select lines. There is no sixth-sensor-board
 expansion requirement. See the handover for the 60-key throughput budget.

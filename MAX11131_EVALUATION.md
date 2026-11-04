@@ -2,6 +2,11 @@
 
 ## Decision
 
+**2026-11-04 update:** the owner selected KS-20 White and retained ADS7953 /
+REF5025, Range 1 (0–2.5 V). MAX11131 is not selected. The evaluation below records
+the earlier alternative and sourcing evidence, not a pending replacement decision.
+See [SWITCH_RANGE_DECISION.md](SWITCH_RANGE_DECISION.md).
+
 **Electrically promising; not approved as the production replacement.**
 MAX11131 supports a single 3.3V supply and a supply-level reference, removing
 the ADS7953 input-range mismatch without adding a 5V inter-board rail.
@@ -157,9 +162,9 @@ TI's [ADS7953SDBTR ordering page](https://www.ti.com/product/ADS7953/part-detail
 now confirms that ADS7953SDBTR and ADS7953SDBT are the same product/package/pinout
 with different carriers (tape-and-reel versus tubes). ADS7953SDBTR / C701670 is
 the documented sourcing choice if retaining ADS7953. Saved KiCad C701092 fields
-have not been edited. The reference/range circuit decision remains open; see
-`SCHEMATIC_REVIEW.md` for the 2.0V/0–4.0V extra-rail and near-3.0V single-rail
-options and the real sensor-output/velocity measurement gate.
+have not been edited. The owner subsequently retained REF5025 / Range 1;
+prototype range margin and velocity-threshold validation remain open. Earlier
+reference alternatives are recorded in `SCHEMATIC_REVIEW.md` for context.
 
 ### Earlier automated lookup (historical, not the current sourcing conclusion)
 

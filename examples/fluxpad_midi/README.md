@@ -12,10 +12,12 @@ keys on a Fluxpad V2, not the main project's SPI sensor boards or Pico 2.
 | key_3 | 27 | 64 | E4 |
 | key_2 | 28 | 67 | G4 |
 
-The Fluxpad V2 schematic identifies TI DRV5056A3QDBZ Hall sensors. The sibling
-`fluxpad` repository identifies Wooting Lekker analog switches, but does not
-confirm the stock L45/L60 variant or switch generation. The main controller's
-selection of Lekker V2 L60 switches is a separate design decision.
+The Fluxpad V2 schematic identifies TI DRV5056A3QDBZ Hall sensors. Current
+Fluxpad V2 specifications identify Gateron KS-20 switches; the GitHub README's
+Lekker description belongs to an older SAMD21 model. The exact historical
+variant in the owner's reference unit is not independently certified. The main
+controller's approved switch is KS-20 White; see
+[the switch/range decision](../../SWITCH_RANGE_DECISION.md).
 
 The device enumerates as composite TinyUSB CDC serial and USB MIDI. MIDI uses
 channel 1. Incoming MIDI is drained without further processing.

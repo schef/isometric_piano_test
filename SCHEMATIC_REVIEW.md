@@ -68,7 +68,11 @@ capacitance before DC-bias derating. This is within the stated 1–50uF range fo
 REF50xxAI, subject to actual capacitor selection and transient/layout validation.
 C7 increases reference startup time; firmware must wait for settling.
 
-### Resolution options — not applied
+### Historical resolution options — alternatives not selected
+
+The owner subsequently selected the existing REF5025 / Range 1 with KS-20 White
+and Fluxpad geometry. The options below preserve the earlier review, not an open
+selection request. Prototype range margin and other validation remain outstanding.
 
 1. **2.0V reference, Range 2: nominal 0–4.0V.** Replace the 2.5V reference
    circuit with a qualified 2.0V reference. Supply U1's analog pins 5/29 from an
@@ -141,9 +145,10 @@ C7 increases reference startup time; firmware must wait for settling.
    output first, then validate scaled static range and dynamic threshold timing
    on the actual mechanism before choosing this option.
 
-Do not route until one approach is reviewed and selected.
+The approach is now selected; complete the remaining geometry and electrical
+checks before routing. Selection does not establish prototype qualification.
 
-### Measurement gate: is a 3.0V range sufficient for piano velocity?
+### Measurement plan — validate the selected 2.5V range
 
 The approximately 3.1V value is the sensor's nominal linear output ceiling,
 **not a prediction that the chosen switch produces 3.1V**. Magnet polarity,
@@ -151,7 +156,7 @@ strength, spacing, alignment and travel determine the actual output. First
 establish the direction of voltage change when pressing; do not assume the
 Fluxpad example's falling thresholds apply unchanged.
 
-Future prototype measurements should use the selected Lekker V2 L60 mechanism,
+Future prototype measurements should use the selected KS-20 White mechanism,
 the intended DRV5056A3 placement and a representative 3.3V supply:
 
 1. Measure local sensor supply and OUT-to-GND voltage at rest, through travel
@@ -165,17 +170,16 @@ the intended DRV5056A3 placement and a representative 3.3V supply:
    plus a reliable release threshold. Keep all thresholds and their noise/
    supply/temperature/unit-to-unit margins comfortably inside the usable ADC
    range. Validate fast/slow presses, repeated presses and partial release.
-4. Decide whether losing any above-3.0V region affects those threshold crossings.
+4. Verify that the selected 0–2.5V range covers those threshold crossings with margin.
    Clipping outside the timing/release regions can be acceptable for this
    two-threshold velocity method; clipping a required crossing is not. It also
    removes continuous position information in that region, relevant to future
    aftertouch-like behavior even if note velocity remains usable.
 
-These are planned tests, not authorization to build/flash firmware or a claim
-that measurements exist. If measurements and tolerance analysis support the
-thresholds, a near-3.0V reference may be enough for the musical requirement.
-Even the existing 2.5V range could be adequate if the measured useful crossings
-fit with margin; do not assume that or reject it without evidence.
+These are planned qualification tests, not authorization to build/flash firmware.
+The preliminary one-key Fluxpad measurements in `SWITCH_RANGE_DECISION.md` do
+not establish multi-unit or worst-case coverage. The owner selected 2.5V / Range 1;
+validate useful crossings and margin rather than treating that decision as proof.
 
 ### Sourcing update: ADS7953SDBTR / C701670
 
@@ -274,7 +278,7 @@ alone does not prove 12-bit settling.
 
 SLAS605C section 8.1 specifies that each frame begins on a **CS falling edge**,
 with 16 clocks per conversion. Keeping CS low for a whole 12-channel sweep, as
-the specification suggests, is not the documented framing method. Channel
+the specification previously suggested, is not the documented framing method. Channel
 selection is pipelined relative to command frames; “zero latency” must not be
 interpreted as an immediate response to a new channel command.
 
@@ -285,6 +289,10 @@ but a real transaction schedule and interconnect analysis are outstanding.
 Eightfold averaging at that per-key rate still exceeds the shared-bus budget.
 
 ### Documentation and sourcing discrepancies
+
+The Markdown sensor specifications, connector description and protocol guidance
+were corrected on 2026-11-04. Saved KiCad fields and hardware validation remain
+unchanged; the findings below record the original review and outstanding checks.
 
 - U2's symbol Datasheet property points to `ref5030a-q1.pdf`, not the selected
   REF5025AIDR datasheet. Verify the exact MPN and C11341 sourcing association.
@@ -297,7 +305,7 @@ Eightfold averaging at that per-key rate still exceeds the shared-bus budget.
 - Schematic ERC does not qualify the unusual combined sensor/switch footprint,
   sensor alignment, assembly placement origin, or pin-to-pad geometry.
 
-## Next decision
+## Current next steps
 
 The MAX11131 has now received a preliminary replacement evaluation in
 [MAX11131_EVALUATION.md](MAX11131_EVALUATION.md). Its 3.3V/reference architecture
@@ -305,9 +313,11 @@ fits electrically, but owner-provided JLCPCB screenshots show zero stock,
 pre-order only, at an estimated US$33.0809 each. It fails the normal-stock
 requirement and is not selected; no schematic changes have been made.
 
-Choose an ADC/input-range strategy first. Then review the five-sensor-board interconnect
-and power budget together, update the schematic through Konnect, repeat ERC and
-netlist review, and only then resume PCB placement/routing review.
+The owner has selected ADS7953 / REF5025, Range 1. Next resolve the placed
+sensor-footprint discrepancy against Fluxpad and apply approved geometry/thickness
+changes through Konnect. Review the five-board interconnect, power budget and
+protocol; repeat ERC/netlist review after schematic changes and complete the
+remaining placement/routing readiness checks. See `TODO.md`.
 
 ## Primary references
 

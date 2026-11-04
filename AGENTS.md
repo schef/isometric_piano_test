@@ -16,6 +16,10 @@ Read `HANDOVER.md` first. The user's priority is the PCB project, not firmware
 development. Do not build, flash, or develop firmware as part of a PCB handover
 unless explicitly requested. The example build instructions below are reference only.
 
+Then read `TODO.md` for cross-session hardware progress. Update its checkboxes
+and session log as tasks are verified, keeping decisions distinct from measured
+validation and retaining references to evidence.
+
 ## Main project priorities
 
 **2026-11-04 owner decision supersedes the older pending-range/Lekker text:**
@@ -30,7 +34,8 @@ flagged a possible ADS7953 reference-voltage issue. Initial review confirmed an
 input-range limitation, not failed REF5025 supply headroom; actual switch clipping
 is unmeasured. See `SCHEMATIC_REVIEW.md` for the 2.0V/0–4.0V extra-rail and
 near-3.0V single-rail options and measurement gate for velocity thresholds.
-Resolve the range decision before routing. If retaining ADS7953, the documented
+The range decision is now selected; validate geometry, range margin and remaining
+electrical checks before routing. For the retained ADS7953, the documented
 sourcing choice is ADS7953SDBTR / C701670 (same chip/package as ADS7953SDBT,
 tape-and-reel); saved KiCad fields remain unchanged. ADC/components may change;
 the ADC must provide 12 or 16 channels and the master must support scanning five
